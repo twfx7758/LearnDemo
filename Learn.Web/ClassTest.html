@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Javascript/Common.js"></script>
+    <script src="Javascript/Class/EditInPlaceField.js"></script>
+    <title></title>
+    <script>
+        //var author = [];
+        //author[0] = Common.inherit(Author);
+        //author[0].name = "Wenbin";
+        //author[0].books = ["Javascript Design patterns"];
+
+        //author[1] = Common.inherit(Author);
+        //author[1].name = "QuWenbin";
+        //author[1].books = ["Javascript Design patterns"];
+
+        //console.log(author[1].getName());
+        //console.log(author[1].getBooks());
+
+        //var author = Common.inherit(Author);
+        //var author2 = Common.inherit(Author);
+        //if (!author.hasOwnProperty("name")) {
+        //    //覆盖原型对象的name属性
+        //    //在改变原型对象的属性值之前，
+        //    //必须先在新的对象上创建属性新的副本
+        //    author.name = "wenbin";
+        //    if (author.hasOwnProperty("name")) { 
+        //        console.log("有自己的属性‘name’");
+        //    }
+
+        //}
+        //else {
+        //    console.log("有自己的属性‘name’");
+        //}
+
+        ////直接修改的是原型对象Author的books值，这是危险的行为
+        //author.books.push("new book");
+
+        ////author.books = [];//创建属性新的副本
+        //var name = author2.name;
+        //var books = author2.books;
+        $(function () {
+            var titleClassical = new EditInPlaceField("titleClassical", document.getElementById("doc"), "Title Here")
+            var currentTitleText = titleClassical.getValue();
+        });
+    </script>
+</head>
+<body>
+    <div id="doc">
+
+    </div>
+</body>
+</html>
