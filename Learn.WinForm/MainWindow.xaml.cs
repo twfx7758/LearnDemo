@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,9 +36,10 @@ namespace Learn.WinForm
             MessageBox.Show("Button's event completed");
         }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
+        private async void Button_Click2(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Button2's event completed");
+            Task<int> lth = AccessTheWebAsync();
+            Label4.Content = await lth;
         }
 
         public async Task<string> Processing()
@@ -50,6 +52,26 @@ namespace Learn.WinForm
             Label3.Content = string.Format("线程：{0}", Thread.CurrentThread.ManagedThreadId);
 
             return "quwenbin";
+        }
+
+        private async Task<int> AccessTheWebAsync() 
+        {
+            Task<string> getStringAsync = GetNameAsync();
+            DoIndependentWork();
+            string urlContents = await getStringAsync;
+            return urlContents.Length;
+        }
+        void DoIndependentWork()
+        {
+            Thread.Sleep(6000);
+            Label3.Content = "Working . . .";
+        }
+
+        Task<string> GetNameAsync()
+        {
+            return Task.Run(() => {
+                return "Working . . .";
+            });
         }
     }
 }
