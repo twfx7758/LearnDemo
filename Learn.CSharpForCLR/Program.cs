@@ -24,8 +24,8 @@ namespace Learn.CSharpForCLR
             //LearnThread.ThreadMain2();
             #endregion
 
-            LearnGCHandle.Go();
-
+            //LearnGCHandle.Go();
+            LearnThread.ThreadMain4();
             Console.ReadLine();
             //强制退出进程
             //Environment.Exit(0);
