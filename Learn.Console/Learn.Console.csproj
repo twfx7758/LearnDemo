@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Learn.Algorithm\Learn.Algorithm.csproj">
-      <Project>{737ea5f7-d14a-4469-b746-413229965598}</Project>
+      <Project>{70129802-cf52-4ea5-a66b-978fee685993}</Project>
       <Name>Learn.Algorithm</Name>
     </ProjectReference>
   </ItemGroup>
