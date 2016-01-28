@@ -22,6 +22,7 @@ namespace Learn.WinForm
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TaskScheduler m_Scheduler = TaskScheduler.FromCurrentSynchronizationContext();
         public MainWindow()
         {
             InitializeComponent();
@@ -69,9 +70,23 @@ namespace Learn.WinForm
 
         Task<string> GetNameAsync()
         {
+            //直接运行任务
             return Task.Run(() => {
                 return "Working . . .";
             });
+        }
+
+        void SchedulerMethod()
+        {
+            var t = new Task<string>(() => { return "Scheduler Working"; });
+            t.Start();
+            t.ContinueWith(task => Label6.Content = task.Result, CancellationToken.None,
+                TaskContinuationOptions.OnlyOnRanToCompletion, m_Scheduler);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SchedulerMethod();
         }
     }
 }
