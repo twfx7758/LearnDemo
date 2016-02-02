@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Learn.SDK
+namespace Learn.SDK.ThreadLock
 {
     //ManualResetEventSlim
     //SemaphoreSlim

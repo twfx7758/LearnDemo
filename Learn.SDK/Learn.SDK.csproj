@@ -48,6 +48,7 @@
     <Compile Include="ThreadLock\SemaphoreWaitLock.cs" />
     <Compile Include="ThreadLock\SimpleSpinLock.cs" />
     <Compile Include="ThreadLock\SimpleWaitLock.cs" />
+    <Compile Include="ThreadLock\Singleton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

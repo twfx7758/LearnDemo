@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Learn.SDK
+namespace Learn.SDK.ThreadLock
 {
     public class SimpleSpinLock{
         private Int32 m_ResourceInUse;
