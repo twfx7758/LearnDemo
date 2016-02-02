@@ -35,6 +35,10 @@ namespace Learn.SDK.ThreadLock
         }
     }
 
+    /// <summary>
+    /// Lazy与LazyInitializer两个类封闭了这两种单例模式
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public sealed class SecSingleton<T> where T : class
     {
         public static T s_value = null;
