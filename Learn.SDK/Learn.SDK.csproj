@@ -39,13 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThreadLock\AnthorHybridLock.cs" />
     <Compile Include="Interface\IAddIn.cs" />
     <Compile Include="PipeClient.cs" />
     <Compile Include="PipeServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SemaphoreWaitLock.cs" />
-    <Compile Include="SimpleSpinLock.cs" />
-    <Compile Include="SimpleWaitLock.cs" />
+    <Compile Include="ThreadLock\SampleHybridLock.cs" />
+    <Compile Include="ThreadLock\SemaphoreWaitLock.cs" />
+    <Compile Include="ThreadLock\SimpleSpinLock.cs" />
+    <Compile Include="ThreadLock\SimpleWaitLock.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
