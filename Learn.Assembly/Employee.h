@@ -1,8 +1,8 @@
 class Employee
 {
 public:
-	Employee();
-	~Employee();
+	Employee(){};
+	~Employee(){};
 
-	static int value;
+	int value = 0;
 };

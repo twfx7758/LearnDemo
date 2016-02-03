@@ -11,7 +11,7 @@ namespace Learn.SDK.ThreadLock
     /// 经典的双检锁技术
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class FirSingleton<T> where T : class
+    public class FirSingleton<T> where T : class
     {
         private static Object s_lock = new Object();
 
@@ -39,7 +39,7 @@ namespace Learn.SDK.ThreadLock
     /// Lazy与LazyInitializer两个类封闭了这两种单例模式
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class SecSingleton<T> where T : class
+    public class SecSingleton<T> where T : class
     {
         public static T s_value = null;
 
