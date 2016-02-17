@@ -88,5 +88,11 @@ namespace Learn.WinForm
         {
             SchedulerMethod();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("RedisDemo.xaml", UriKind.Relative));
+            this.Content = new RedisDemo();
+        }
     }
 }
