@@ -56,6 +56,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "平台", "平台", "{FCB0B0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{398AE864-2C12-43C2-B863-7D4FAC04D961}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6BDACFC5-EB80-4727-85DB-056671A506BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{83D8BD93-D33C-45D3-884E-A096FFDE5337}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Redis\ServiceStack.Common.dll = lib\Redis\ServiceStack.Common.dll
+		lib\Redis\ServiceStack.Interfaces.dll = lib\Redis\ServiceStack.Interfaces.dll
+		lib\Redis\ServiceStack.Redis.dll = lib\Redis\ServiceStack.Redis.dll
+		lib\Redis\ServiceStack.Text.dll = lib\Redis\ServiceStack.Text.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -258,5 +268,6 @@ Global
 		{19DFE03C-1419-4726-BE39-3F3D595FE0EA} = {D222E2EA-85C1-40F5-B730-3428321B08CD}
 		{FCB0B09B-15BD-4B0D-8447-A8F565179035} = {D222E2EA-85C1-40F5-B730-3428321B08CD}
 		{398AE864-2C12-43C2-B863-7D4FAC04D961} = {D222E2EA-85C1-40F5-B730-3428321B08CD}
+		{83D8BD93-D33C-45D3-884E-A096FFDE5337} = {6BDACFC5-EB80-4727-85DB-056671A506BF}
 	EndGlobalSection
 EndGlobal
