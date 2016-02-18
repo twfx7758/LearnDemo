@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1:8888/calculatorservice" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:8888/calculatorservice/metadata" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="calculatorservice.xsd" MetadataType="Schema" ID="95fe3f97-937b-4b38-a60f-f93897a115c5" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice?xsd=xsd1" />
-    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="8ae2c9ac-e158-4e98-9678-41c75e14e6bf" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice" />
-    <MetadataFile FileName="calculatorservice1.xsd" MetadataType="Schema" ID="726d5981-7a00-4a65-873d-da9464a7a744" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice?xsd=xsd0" />
+    <MetadataFile FileName="CalculatorService1.wsdl" MetadataType="Wsdl" ID="824df8d9-3493-46e4-907c-a29e019682b5" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice/metadata" />
+    <MetadataFile FileName="metadata.xsd" MetadataType="Schema" ID="73506ee8-bbdb-4bc4-9a13-fbe06d7da3d4" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata1.xsd" MetadataType="Schema" ID="49c08b01-e2e4-4750-87f4-6232ceb3d6e6" SourceId="1" SourceUrl="http://127.0.0.1:8888/calculatorservice/metadata?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

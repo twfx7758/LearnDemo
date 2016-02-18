@@ -55,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\Api.Wcf.Calculator\CalculatorService.wsdl" />
-    <None Include="Service References\Api.Wcf.Calculator\calculatorservice.xsd">
+    <None Include="Service References\Api.Wcf.Calculator\CalculatorService1.wsdl" />
+    <None Include="Service References\Api.Wcf.Calculator\metadata.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Api.Wcf.Calculator\calculatorservice1.xsd">
+    <None Include="Service References\Api.Wcf.Calculator\metadata1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

@@ -250,8 +250,8 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://127.0.0.1:8888/calculatorservice?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://127.0.0.1:8888/calculatorservice?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:8888/calculatorservice/metadata?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:8888/calculatorservice/metadata?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICalculate_Add_InputMessage">
