@@ -10,7 +10,7 @@ namespace WCF.Client2
     {
         static void Main(string[] args)
         {
-            new ServiceInvoker().Add(10, 12.5);
+            new ServiceInvoker().Add(10, 12);
 
             Console.ReadLine();
         }

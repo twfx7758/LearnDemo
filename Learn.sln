@@ -78,6 +78,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Service.Interface", "WC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Client2", "WCF.Client2\WCF.Client2.csproj", "{BE929749-51AE-4233-BB48-8BBAB1F8DE52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Hosting.Web", "WCF.Hosting.Web\WCF.Hosting.Web.csproj", "{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -304,6 +306,16 @@ Global
 		{BE929749-51AE-4233-BB48-8BBAB1F8DE52}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BE929749-51AE-4233-BB48-8BBAB1F8DE52}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BE929749-51AE-4233-BB48-8BBAB1F8DE52}.Release|Win32.ActiveCfg = Release|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -336,5 +348,6 @@ Global
 		{C512446B-3A1B-4508-B930-3AFCB770B9D1} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{BC60D6DA-3466-4391-908C-229F84749627} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{BE929749-51AE-4233-BB48-8BBAB1F8DE52} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
+		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 	EndGlobalSection
 EndGlobal
