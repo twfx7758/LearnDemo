@@ -15,13 +15,14 @@ namespace WCF.Hosting
         static void Main(string[] args)
         {
             using (ServiceHost host = new ServiceHost(typeof(CalculatorService))) {
-                host.AddServiceEndpoint(typeof(ICalculate), new WSHttpBinding(), "http://127.0.0.1:8888/calculatorservice");
-                if (host.Description.Behaviors.Find<ServiceMetadataBehavior>() == null) {
-                    ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
-                    behavior.HttpGetEnabled = true;
-                    behavior.HttpGetUrl = new Uri("http://127.0.0.1:8888/calculatorservice");
-                    host.Description.Behaviors.Add(behavior);
-                }
+                //在配置里添加Behaviors
+                //host.AddServiceEndpoint(typeof(ICalculate), new WSHttpBinding(), "http://127.0.0.1:8888/calculatorservice");
+                //if (host.Description.Behaviors.Find<ServiceMetadataBehavior>() == null) {
+                //    ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
+                //    behavior.HttpGetEnabled = true;
+                //    behavior.HttpGetUrl = new Uri("http://127.0.0.1:8888/calculatorservice");
+                //    host.Description.Behaviors.Add(behavior);
+                //}
 
                 host.Opened += (s, e) => { Console.Write("CalculatorService服务已经启动，按任意键终止服务！"); };
 
