@@ -13,8 +13,6 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
-            
-
             Console.ReadLine();
         }
 
