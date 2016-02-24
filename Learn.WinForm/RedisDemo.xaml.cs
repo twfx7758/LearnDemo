@@ -29,14 +29,17 @@ namespace Learn.WinForm
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //必须配置一台Redis服务器
-            RedisClient client = new RedisClient("192.168.84.229", 6379);
-            client.SetValue("city", this.txtRedisVal.Text);
+            using (var client = RedisManager.GetClient()) {
+                client.SetValue("city", this.txtRedisVal.Text);
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RedisClient client = new RedisClient("192.168.84.229", 6379);
-            this.lblShowRedisVal.Content = client.Get<string>("city");
+            using (var client = RedisManager.GetClient())
+            {
+                this.lblShowRedisVal.Content = client.Get<string>("city");
+            }
         }
     }
 }
