@@ -88,6 +88,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{6E
 		..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.ServiceModel.dll = ..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.ServiceModel.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{02F7F265-9973-4C7D-B554-C5DD1D8C8176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitClient", "RabbitClient\RabbitClient.csproj", "{1A993889-DCC2-4807-A645-1C9ED77BA8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitService", "RabbitService\RabbitService.csproj", "{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -336,6 +342,30 @@ Global
 		{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA}.Release|Win32.ActiveCfg = Release|Any CPU
 		{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA}.Release|Win32.Build.0 = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Debug|Win32.Build.0 = Debug|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Win32.ActiveCfg = Release|Any CPU
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF}.Release|Win32.Build.0 = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Debug|Win32.Build.0 = Debug|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Win32.ActiveCfg = Release|Any CPU
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -371,5 +401,7 @@ Global
 		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA} = {56215BF1-C233-40B4-A3DA-2A5C0AFA94AE}
 		{6EB95BBA-61D0-4E29-96ED-B499B4B9A52A} = {6BDACFC5-EB80-4727-85DB-056671A506BF}
+		{1A993889-DCC2-4807-A645-1C9ED77BA8CF} = {02F7F265-9973-4C7D-B554-C5DD1D8C8176}
+		{B3E86D9D-5120-4F3E-B064-D58476AFCE2E} = {02F7F265-9973-4C7D-B554-C5DD1D8C8176}
 	EndGlobalSection
 EndGlobal

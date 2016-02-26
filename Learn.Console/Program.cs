@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Learn.Framework;
 using System.Collections;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
 namespace Learn.ConsolePlat
 {
@@ -14,12 +16,6 @@ namespace Learn.ConsolePlat
         static void Main(string[] args)
         {
             Console.ReadLine();
-        }
-
-        //测试RabbitMQ
-        static void RabbitMQTest()
-        {
-
         }
 
         //Hash示例
