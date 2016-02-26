@@ -28,9 +28,15 @@ namespace Learn.WinForm
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            List<UserInfo> list = new List<UserInfo>();
+            list.Add(new UserInfo { UserId = 1, UserName = "wenbin1", Mobile = "13718312531" });
+            list.Add(new UserInfo { UserId = 2, UserName = "wenbin2", Mobile = "13718312532" });
+            list.Add(new UserInfo { UserId = 3, UserName = "wenbin3", Mobile = "13718312533" });
+            list.Add(new UserInfo { UserId = 4, UserName = "wenbin4", Mobile = "13718312534" });
             //必须配置一台Redis服务器
-            using (var client = RedisManager.GetClient()) {
-                client.SetValue("city", this.txtRedisVal.Text);
+            using (var client = RedisManager.GetClient())
+            {
+                client.Set<List<UserInfo>>("userinfolist", list);
             }
         }
 
@@ -38,8 +44,16 @@ namespace Learn.WinForm
         {
             using (var client = RedisManager.GetClient())
             {
-                this.lblShowRedisVal.Content = client.Get<string>("city");
+                var list = client.Get<List<UserInfo>>("userinfolist");
+                this.lblShowRedisVal.Content = list[0].UserName + "_" + list[1].UserName + "_" + list[2].UserName + "_" + list[3].UserName;
             }
         }
+
+    }
+    sealed class UserInfo
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Mobile { get; set; }
     }
 }
