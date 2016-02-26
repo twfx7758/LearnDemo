@@ -82,6 +82,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Hosting.Web", "WCF.Host
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.Framework", "Learn.Framework\Learn.Framework.csproj", "{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{6EB95BBA-61D0-4E29-96ED-B499B4B9A52A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.Client.dll = ..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.Client.dll
+		..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.ServiceModel.dll = ..\..\Tesseract\rabbitmq-dotnet-client-3.4.2-dotnet-3.5\bin\RabbitMQ.ServiceModel.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -364,5 +370,6 @@ Global
 		{BE929749-51AE-4233-BB48-8BBAB1F8DE52} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{86ED667B-D20C-4DFA-91BC-F9A4FEC119CA} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{1C99416C-57C5-4C5C-87C1-3473A8FB2CBA} = {56215BF1-C233-40B4-A3DA-2A5C0AFA94AE}
+		{6EB95BBA-61D0-4E29-96ED-B499B4B9A52A} = {6BDACFC5-EB80-4727-85DB-056671A506BF}
 	EndGlobalSection
 EndGlobal

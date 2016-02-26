@@ -16,6 +16,12 @@ namespace Learn.ConsolePlat
             Console.ReadLine();
         }
 
+        //测试RabbitMQ
+        static void RabbitMQTest()
+        {
+
+        }
+
         //Hash示例
         static void HashDemo()
         {
