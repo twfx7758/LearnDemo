@@ -6,7 +6,7 @@ using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WCF.SDK.ChannelFile
+namespace WCF.SDK.Channel
 {
     public class SimpleRequestChannel : SimpleChannelBase, IRequestChannel
     {

@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChannelStack\SimpleChannelListenerBase.cs" />
+    <Compile Include="ChannelStack\SimpleDatagramChannelListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ChannelFile\SampleChannelBase.cs" />
-    <Compile Include="ChannelFile\SimpleDuplexSessionChannel.cs" />
-    <Compile Include="ChannelFile\SimpleReplyChannel.cs" />
-    <Compile Include="ChannelFile\SimpleRequestChannel.cs" />
+    <Compile Include="Channel\SampleChannelBase.cs" />
+    <Compile Include="Channel\SimpleDuplexSessionChannel.cs" />
+    <Compile Include="Channel\SimpleReplyChannel.cs" />
+    <Compile Include="Channel\SimpleRequestChannel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
