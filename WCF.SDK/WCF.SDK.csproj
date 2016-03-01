@@ -43,10 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleChannelBase.cs" />
-    <Compile Include="SimpleDuplexSessionChannel.cs" />
-    <Compile Include="SimpleReplyChannel.cs" />
-    <Compile Include="SimpleRequestChannel.cs" />
+    <Compile Include="ChannelFile\SampleChannelBase.cs" />
+    <Compile Include="ChannelFile\SimpleDuplexSessionChannel.cs" />
+    <Compile Include="ChannelFile\SimpleReplyChannel.cs" />
+    <Compile Include="ChannelFile\SimpleRequestChannel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
