@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Channels" />
@@ -44,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ChannelStack\SimpleChannelListenerBase.cs" />
     <Compile Include="ChannelStack\SimpleDatagramChannelListener.cs" />
+    <Compile Include="Common\SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Channel\SampleChannelBase.cs" />
     <Compile Include="Channel\SimpleDuplexSessionChannel.cs" />
