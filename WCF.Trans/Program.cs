@@ -22,7 +22,7 @@ namespace WCF.Trans
             //开始转帐    
             try
             {
-                dal.Transfer(accountFoo, nonExistentAccount, 1000);
+                dal.Transfer2(accountFoo, nonExistentAccount, 1000);
             }
             catch (Exception ex)
             {
