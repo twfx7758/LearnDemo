@@ -9,6 +9,21 @@ namespace WCF.Client
 {
     internal class ServiceInvoker
     {
+        public void MainMethod()
+        {
+            IEnumerable<string> items = GetItems();
+            Console.WriteLine("begin to iterate the collection.");
+            items.ToArray();
+        }
+
+        IEnumerable<string> GetItems()
+        {
+            Console.WriteLine("Begin to invoke GetItems() method.");
+            yield return "Foo";
+            yield return "Bar";
+            yield return "Baz";
+        }
+
         public async void Add(double x, double y)
         {
             Api.Wcf.Calculator.CalculateClient client = new Api.Wcf.Calculator.CalculateClient();

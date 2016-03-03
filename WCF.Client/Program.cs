@@ -14,11 +14,14 @@ namespace WCF.Client
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("main线程ID：{0}", Thread.CurrentThread.ManagedThreadId);
-            //new ServiceInvoker().Add(10, 12.5);
+            Console.WriteLine("main线程ID：{0}", Thread.CurrentThread.ManagedThreadId);
+            new ServiceInvoker().Add(10, 12.5);
 
             //监听服务
-            ServiceListener();
+            //ServiceListener();
+
+            //测试延迟执行关键字yield
+            //new ServiceInvoker().MainMethod();
 
             Console.ReadLine();
         }
