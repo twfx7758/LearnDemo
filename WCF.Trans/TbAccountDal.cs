@@ -15,11 +15,24 @@ namespace WCF.Trans
     public class TbAccountDal
     {
         static readonly string connStr = ConfigurationManager.ConnectionStrings["DemoConnString"].ConnectionString;
+        static readonly string connStr2 = ConfigurationManager.ConnectionStrings["DemoConnString2"].ConnectionString;
+        static readonly string HMCCRMStr = ConfigurationManager.ConnectionStrings["HMCCRMRW"].ConnectionString;
 
         public void Transfer2(string accountFrom, string accountTo, float amount)
         {
-            Withdraw(accountFrom, amount);
-            Deposite(accountTo, amount);
+            List<Action> list = new List<Action>();
+
+            //同库同表不会提升为分布式事务
+            //list.Add(() => Withdraw(accountFrom, amount));
+            //list.Add(() => Deposite(accountTo, amount));
+            //分布式事务，需要开启（DTC）windows服务
+            //list.Add(() => TheSameMachine());//同一台机器，不同库，不同表，会提升为分布式事务（DTC）
+
+            //跨库的情况，如果是一个connection连接，不会提升为分布式事务（在sql server2005以后版本），如果不是必定会提升为分布式事务
+            list.Add(() => HMCCRMQuery2());
+            list.Add(() => HMCCRMQuery());
+
+            InvokeInTransactionScope(list);
         }
 
         public void Transfer(string accountFrom, string accountTo, float amount)
@@ -74,7 +87,7 @@ namespace WCF.Trans
                 new SqlParameter("@id",accountId),
                 new SqlParameter("@amount",amount)
             };
-            InvokeInTransaction(()=> SqlHelper.ExecuteNonQuery(connStr, CommandType.StoredProcedure, "P_WITHDRAW", _param));
+            SqlHelper.ExecuteNonQuery(connStr, CommandType.StoredProcedure, "P_WITHDRAW", _param);
             
         }
 
@@ -84,9 +97,37 @@ namespace WCF.Trans
                 new SqlParameter("@id",accountId),
                 new SqlParameter("@amount",amount)
             };
-            InvokeInTransaction(() => SqlHelper.ExecuteNonQuery(connStr, CommandType.StoredProcedure, "P_DEPOSIT", _param));
+            SqlHelper.ExecuteNonQuery(connStr, CommandType.StoredProcedure, "P_DEPOSIT", _param);
         }
-            
+
+        public void TheSameMachine()
+        {
+            string strSql = @" IF NOT EXISTS(SELECT * FROM [dbo].[Table_1] WHERE ID = 1000000)
+                                   BEGIN
+                                       RAISERROR ('帐户ID不存在',16,1)
+                                   END
+                               UPDATE dbo.Table_1 SET UserName='201' WHERE CustomerId=1000000";
+
+            SqlHelper.ExecuteNonQuery(connStr2, CommandType.Text, strSql);
+        }
+
+        public void HMCCRMQuery()
+        {
+            string strSql = @" IF NOT EXISTS(SELECT * FROM [dbo].[CustomerInfo] WHERE CustomerId = 1000000)
+                                   BEGIN
+                                       RAISERROR ('帐户ID不存在',16,1)
+                                   END
+                               UPDATE dbo.CustomerInfo SET CityID=201 WHERE CustomerId=1000000";
+
+            SqlHelper.ExecuteNonQuery(HMCCRMStr, CommandType.Text, strSql);
+        }
+
+        public void HMCCRMQuery2()
+        {
+            string strSql = "SELECT * FROM [dbo].[CustomerInfo] WHERE CustomerId = 1000000";
+
+            SqlHelper.ExecuteNonQuery(HMCCRMStr, CommandType.Text, strSql);
+        }
 
         public float GetBalance(string accountId)
         {
@@ -139,11 +180,11 @@ namespace WCF.Trans
             }
         }
 
-        void InvokeInTransactionScope(Action action)
+        void InvokeInTransactionScope(List<Action> list)
         {
             using (TransactionScope transactionScope = new TransactionScope())
             {
-                action();
+                list.ForEach(a => a());
                 transactionScope.Complete();
             }
         }
