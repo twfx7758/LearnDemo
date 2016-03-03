@@ -15,10 +15,10 @@ namespace WCF.Hosting
         static void Main(string[] args)
         {
             //基地址 + 相对地址
-            HostByBaseAddress();
+            //HostByBaseAddress();
 
             //测试yield返回IEnumerable<T>类型
-            //HostForDemoService();
+            HostForDemoService();
         }
 
         //测试yield返回IEnumerable<T>类型
@@ -26,7 +26,7 @@ namespace WCF.Hosting
         {
             using (ServiceHost host = new ServiceHost(typeof(DemoService)))
             {
-                host.AddServiceEndpoint(typeof(IDemoService), new WSHttpBinding(), new Uri("http://127.0.0.1/DemoService"));
+                //host.AddServiceEndpoint(typeof(IDemoService), new WSHttpBinding(), new Uri("http://127.0.0.1:3721/DemoService"));
                 host.Opened += (s, e) => { Console.Write("DemoService服务已经启动，按任意键终止服务！"); };
 
                 host.Open();

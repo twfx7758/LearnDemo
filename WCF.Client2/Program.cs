@@ -6,6 +6,7 @@ using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using WCF.Service.Interface;
 
 namespace WCF.Client2
 {
@@ -15,12 +16,14 @@ namespace WCF.Client2
         {
             //new ServiceInvoker().Add(10, 12);
 
-            //发送消息
-            SendMessageClient();
+            //客户端通道发送消息
+            //SendMessageClient();
 
+            DemoServiceClient();
             Console.ReadLine();
         }
 
+        #region 客户端通道发送消息
         static void SendMessageClient()
         {
             Uri listUri = new Uri("http://127.0.0.1:3721/listener");
@@ -45,5 +48,20 @@ namespace WCF.Client2
                 new XElement(ns + "y", 2)));
             return Message.CreateMessage(binding.MessageVersion, action, body);
         }
+        #endregion
+
+        #region 服务程序的调用
+        static void DemoServiceClient()
+        {
+            using (ChannelFactory<IDemoService> factory = new ChannelFactory<IDemoService>("DemoService"))
+            {
+                IDemoService demoService = factory.CreateChannel();
+                var items = demoService.GetItems("");
+                items.ToArray();
+            }
+
+            Console.ReadLine();
+        }
+        #endregion 
     }
 }
