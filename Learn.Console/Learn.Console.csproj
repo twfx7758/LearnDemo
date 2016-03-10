@@ -60,6 +60,10 @@
       <Project>{1c99416c-57c5-4c5c-87c1-3473a8fb2cba}</Project>
       <Name>Learn.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Learn.SDK\Learn.SDK.csproj">
+      <Project>{7ba942bd-bcb5-4720-bb29-143897358c83}</Project>
+      <Name>Learn.SDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,7 @@ using Learn.Framework;
 using System.Collections;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Learn.SDK.Redis;
 
 namespace Learn.ConsolePlat
 {
@@ -15,6 +16,11 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
+            RedisClient client = new RedisClient();
+            client.RedisTest();
+
+            Console.WriteLine("插入数据结束");
+
             Console.ReadLine();
         }
 
