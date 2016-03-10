@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,29 +12,37 @@ namespace Learn.SDK.Redis
     {
         public void RedisTest()
         {
-            //List<UserInfo> list = new List<UserInfo>();
-            //list.Add(new UserInfo { UserId = 1, UserName = "wenbin1", Mobile = "13718312531" });
-            //list.Add(new UserInfo { UserId = 2, UserName = "wenbin2", Mobile = "13718312532" });
-            //list.Add(new UserInfo { UserId = 3, UserName = "wenbin3", Mobile = "13718312533" });
-            //list.Add(new UserInfo { UserId = 4, UserName = "wenbin4", Mobile = "13718312534" });
-            ////必须配置一台Redis服务器
-            //using (var client = RedisManager.GetClient())
-            //{
-            //    client.Set<List<UserInfo>>("userinfolist", list);
-            //}
-            Random rm = new Random();
-            int iVal = 0;
+            const int segment = 100;
             using (var client = RedisManager.GetClient())
             {
+                //segment hash
                 for (int i = 1; i <= 1000000; i++)
                 {
-                    //iVal = rm.Next(1, 20000);
-                    //client.SetEntryInHash((i / 100).ToString(), (iVal / 100).ToString(), iVal.ToString());
-
-                    List<string> list = client.GetHashValues((i / 100).ToString());
-                    list.ForEach(a => { Console.WriteLine("i值{0}，val:{1}", i, a); });
-                    Thread.Sleep(1000);
+                    string key = "f:" + (i % segment).ToString();
+                    string strVal = "v:" + i.ToString();
+                    string hashId = "0";
+                    if ((i % segment) == 0)
+                        hashId = ((i - 1) / segment).ToString();
+                    client.SetEntryInHash(hashId, key, strVal);
                 }
+
+                //hash
+                //string hashId = "testId";
+                //for (int i = 1; i <= 1000000; i++)
+                //{
+                //    string key = "f:" + (i % segment).ToString();
+                //    string strVal = "v:" + i.ToString();
+                //    client.SetEntryInHash(hashId, key, strVal);
+                //}
+
+                //string key = "f:" + (i % segment).ToString();
+                //Dictionary<string, string> dic = client.GetAllEntriesFromHash("0");
+                // Console.WriteLine("i值{0}，val:{1}", dic.Keys., a);
+
+                //List<string> list = client.GetHashValues((i / 100).ToString());
+                //list.ForEach(a => { Console.WriteLine("i值{0}，val:{1}", i, a); });
+                //Thread.Sleep(1000);
+
             }
         }
     }
