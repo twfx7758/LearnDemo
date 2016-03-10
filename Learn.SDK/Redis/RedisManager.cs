@@ -33,7 +33,7 @@ namespace Learn.SDK.Redis
             string[] writeServerList = SplitString(redisConfigInfo.WriteServerList, ",");
             string[] readServerList = SplitString(redisConfigInfo.ReadServerList, ",");
 
-            prcm = new PooledRedisClientManager(readServerList, writeServerList,
+            prcm = new PooledRedisClientManager(writeServerList, readServerList,
                              new RedisClientManagerConfig
                              {
                                  MaxWritePoolSize = redisConfigInfo.MaxWritePoolSize,

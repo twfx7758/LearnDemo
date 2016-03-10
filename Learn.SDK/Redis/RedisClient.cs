@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Learn.SDK.Redis
@@ -24,10 +25,14 @@ namespace Learn.SDK.Redis
             int iVal = 0;
             using (var client = RedisManager.GetClient())
             {
-                for (int i = 0; i < 1000000; i++)
+                for (int i = 1; i <= 1000000; i++)
                 {
-                    iVal = rm.Next(1, 20000);
-                    client.Set<int>(i.ToString(), i);
+                    //iVal = rm.Next(1, 20000);
+                    //client.SetEntryInHash((i / 100).ToString(), (iVal / 100).ToString(), iVal.ToString());
+
+                    List<string> list = client.GetHashValues((i / 100).ToString());
+                    list.ForEach(a => { Console.WriteLine("i值{0}，val:{1}", i, a); });
+                    Thread.Sleep(1000);
                 }
             }
         }
