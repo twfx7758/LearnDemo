@@ -9,6 +9,7 @@ using System.Collections;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Learn.SDK.Redis;
+using Learn.SDK.Attribute;
 
 namespace Learn.ConsolePlat
 {
@@ -16,12 +17,26 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
+            AttributeDemo();
+
+            Console.ReadLine();
+        }
+
+        //Attribute
+        static void AttributeDemo()
+        {
+            var info = new OSVERSIONINFO();
+            MyClass.GetVersion(info);
+            Console.WriteLine("Version:{0}", info.CSDVersion);
+        }
+
+        //Redis示例
+        static void RedisDemo()
+        {
             RedisClient client = new RedisClient();
             client.RedisTest();
 
             Console.WriteLine("插入数据结束");
-
-            Console.ReadLine();
         }
 
         //Hash示例
