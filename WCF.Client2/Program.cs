@@ -19,11 +19,8 @@ namespace WCF.Client2
             //SendMessageClient();
             //DemoServiceClient();
 
-            BasicHttpBinding binding = new BasicHttpBinding();
-            ListAllBindingElements(binding);
-            Console.WriteLine("-------------------------------------------------------");
-            WebHttpBinding binding2 = new WebHttpBinding();//支持事务流转
-            ListAllBindingElements(binding2);
+            //WBinding.BindMain();
+            WMessage.MessageHeaderMain();
 
             Console.ReadLine();
         }
@@ -68,16 +65,6 @@ namespace WCF.Client2
             Console.ReadLine();
         }
         #endregion
-
-        #region WCF预定义的绑定都具有的绑定元素
-        static void ListAllBindingElements(Binding binding)
-        {
-            BindingElementCollection elements = binding.CreateBindingElements();
-            for (int i = 0; i < elements.Count; i++)
-            {
-                Console.WriteLine("{0}. {1}", i + 1, elements[i].GetType().FullName);
-            }
-        }
-        #endregion
+        
     }
 }
