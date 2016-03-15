@@ -15,11 +15,16 @@ namespace WCF.Client2
         static void Main(string[] args)
         {
             //new ServiceInvoker().Add(10, 12);
-
             //客户端通道发送消息
             //SendMessageClient();
+            //DemoServiceClient();
 
-            DemoServiceClient();
+            BasicHttpBinding binding = new BasicHttpBinding();
+            ListAllBindingElements(binding);
+            Console.WriteLine("-------------------------------------------------------");
+            WebHttpBinding binding2 = new WebHttpBinding();//支持事务流转
+            ListAllBindingElements(binding2);
+
             Console.ReadLine();
         }
 
@@ -62,6 +67,17 @@ namespace WCF.Client2
 
             Console.ReadLine();
         }
-        #endregion 
+        #endregion
+
+        #region WCF预定义的绑定都具有的绑定元素
+        static void ListAllBindingElements(Binding binding)
+        {
+            BindingElementCollection elements = binding.CreateBindingElements();
+            for (int i = 0; i < elements.Count; i++)
+            {
+                Console.WriteLine("{0}. {1}", i + 1, elements[i].GetType().FullName);
+            }
+        }
+        #endregion
     }
 }
