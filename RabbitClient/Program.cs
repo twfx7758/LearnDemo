@@ -19,7 +19,7 @@ namespace RabbitClient
         //测试RabbitMQ
         static void RabbitMQTest()
         {
-            RabbitMQClientContext context = new RabbitMQClientContext();
+            RabbitMQClientContext context = new RabbitMQClientContext() { SendQueueName = "SendQueueName", SendExchange = "amq.fanout" };
 
             EventMessage message = new EventMessage() {
                 IsOperationOk = false,
@@ -27,7 +27,7 @@ namespace RabbitClient
             };
 
             RabbitMQSender sender = new RabbitMQSender() { Context = context };
-            sender.TriggerEventMessage(message, "amq.fanout", "LogQueue");
+            sender.TriggerEventMessage(message);
         }
     }
 }

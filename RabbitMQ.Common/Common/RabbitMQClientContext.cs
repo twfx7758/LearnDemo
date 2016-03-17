@@ -22,7 +22,12 @@ namespace RabbitMQ.Common
         /// <summary>
         /// 用于发送的Queue名称
         /// </summary>
-        public string SendQueueName { get; internal set; }
+        public string SendQueueName { get; set; }
+
+        /// <summary>
+        /// 用于发送的Exchange名称
+        /// </summary>
+        public string SendExchange { get; set; }
 
         /// <summary>
         /// 用于监听消息的Connection
