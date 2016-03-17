@@ -37,6 +37,6 @@ namespace RabbitMQ.Common
         /// <summary>
         /// 用于监听的Queue名称
         /// </summary>
-        public string ListenQueueName { get; internal set; }
+        public string ListenQueueName { get; set; }
     }
 }

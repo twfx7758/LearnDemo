@@ -24,7 +24,7 @@ namespace RabbitService
         static void RabbitMQTest()
         {
             LogLocation.Log = new LogInfo();
-            RabbitMQClientContext context = new RabbitMQClientContext();
+            RabbitMQClientContext context = new RabbitMQClientContext() { ListenQueueName = "LogQueue" };
             RabbitMQConsumer consumer = new RabbitMQConsumer() {
                  Context = context,
                  ActionMessage = b => {

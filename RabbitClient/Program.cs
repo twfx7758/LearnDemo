@@ -27,7 +27,7 @@ namespace RabbitClient
             };
 
             RabbitMQSender sender = new RabbitMQSender() { Context = context };
-            sender.TriggerEventMessage(message, "", "Info");
+            sender.TriggerEventMessage(message, "amq.fanout", "LogQueue");
         }
     }
 }

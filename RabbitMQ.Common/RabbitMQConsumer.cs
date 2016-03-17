@@ -60,7 +60,7 @@ namespace RabbitMQ.Common
             {
                 var result = EventMessage.BuildEventMessageResult(args.Body);
 
-                if (ActionMessage == null)
+                if (ActionMessage != null)
                     ActionMessage(result);//触发外部监听事件，处理此消息
 
                 if (!result.IsOperationOk)
