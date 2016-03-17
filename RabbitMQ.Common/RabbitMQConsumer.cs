@@ -2,16 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Common
 {
-    public class RabbitMQConsumer
+    public class RabbitMQConsumer<T> where T : IEventMessage
     {
+        private IEventMessage message = (IEventMessage)Activator.CreateInstance(typeof(T));
+
         public RabbitMQClientContext Context { get; set; }
 
-        public Action<EventMessage> ActionMessage = null;
+        public Action<IEventMessage> ActionMessage = null;
 
         public void OnListening()
         {
@@ -70,7 +73,7 @@ namespace RabbitMQ.Common
         {
             try
             {
-                var result = EventMessage.BuildEventMessageResult(args.Body);
+                var result = message.BuildEventMessageResult(args.Body);
 
                 if (ActionMessage != null)
                     ActionMessage(result);//触发外部监听事件，处理此消息
@@ -82,7 +85,7 @@ namespace RabbitMQ.Common
                 }
                 else if (!Context.ListenChannel.IsClosed)
                 {
-                    //如果通道还未关闭，给RabbitMQ发送一条确认消息，
+                    //如果通道还未关闭，给RabbitMQ发送一条确认消息(ACK)，
                     //告诉它此消息已成功处理，可以从队列中删除了
                     Context.ListenChannel.BasicAck(args.DeliveryTag, false);
                 }

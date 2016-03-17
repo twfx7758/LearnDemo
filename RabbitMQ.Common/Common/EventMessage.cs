@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace RabbitMQ.Common
 {
     [Serializable]
-    public class EventMessage
+    public class EventMessage : IEventMessage
     {
         public bool IsOperationOk { get; set; }
 
         public string MessageContent { get; set; } 
 
-        public static EventMessage BuildEventMessageResult(byte[] body)
+        public IEventMessage BuildEventMessageResult(byte[] body)
         {
-            return MessageSerializerFactory.CreateMessageSerializerInstance().BytesDeseriallizer<EventMessage>(body);
+            return MessageSerializerFactory.CreateMessageSerializerInstance().BytesDeseriallizer<IEventMessage>(body);
         }
     }
 }

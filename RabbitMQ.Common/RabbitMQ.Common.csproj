@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\EventMessage.cs" />
+    <Compile Include="Common\IEventMessage.cs" />
     <Compile Include="Log\ILog.cs" />
     <Compile Include="Log\LogInfo.cs" />
     <Compile Include="Log\LogLocation.cs" />

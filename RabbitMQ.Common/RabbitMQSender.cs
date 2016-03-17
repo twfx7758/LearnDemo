@@ -12,7 +12,7 @@ namespace RabbitMQ.Common
 
         //客户端发送消息的时候要标记上消息的持久化状态
         //可以在创建队列的时候设置此队列是持久化的，但是队列中的消息要在我们发送某个消息的时候打上需要持久化的状态标记。
-        public void TriggerEventMessage(EventMessage eventMessage)
+        public void TriggerEventMessage(IEventMessage eventMessage)
         {
             Context.SendConnection = RabbitMQClientFactory.CreateConnectionForSend();//获取连接
             using (Context.SendConnection)
