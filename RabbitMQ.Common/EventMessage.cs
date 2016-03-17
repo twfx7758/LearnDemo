@@ -8,9 +8,13 @@ namespace RabbitMQ.Common
 {
     public class EventMessage
     {
-        public static MessageProcessResult BuildEventMessageResult(byte[] body)
+        public bool IsOperationOk { get; set; }
+
+        public string MessageContent { get; set; } 
+
+        public static EventMessage BuildEventMessageResult(byte[] body)
         {
-            return null;
+            return MessageSerializerFactory.CreateMessageSerializerInstance().BytesDeseriallizer<EventMessage>(body);
         }
     }
 }
