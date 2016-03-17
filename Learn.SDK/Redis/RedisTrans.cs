@@ -49,5 +49,6 @@ namespace Learn.SDK.Redis
                     }
                 }
             }
+        }
     }
 }
