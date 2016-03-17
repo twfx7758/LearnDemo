@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.Owin.Host", "Learn.Ow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.OwinPro", "Learn.OwinPro\Learn.OwinPro.csproj", "{20ED3863-4E1E-4500-AEA3-2491B3C20E11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.Common", "RabbitMQ.Common\RabbitMQ.Common.csproj", "{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -399,6 +401,18 @@ Global
 		{20ED3863-4E1E-4500-AEA3-2491B3C20E11}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{20ED3863-4E1E-4500-AEA3-2491B3C20E11}.Release|Win32.ActiveCfg = Release|Any CPU
 		{20ED3863-4E1E-4500-AEA3-2491B3C20E11}.Release|Win32.Build.0 = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Debug|Win32.Build.0 = Debug|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Win32.ActiveCfg = Release|Any CPU
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -437,5 +451,6 @@ Global
 		{32F25CAB-AD41-4310-AA70-73B1485B395F} = {50ECEEDB-C48D-45F1-9473-5C857F99D923}
 		{36B4594F-985D-494C-88D9-F3CD338C35EE} = {082E4BDF-CDB1-4594-8976-EE9BD7CCDA67}
 		{20ED3863-4E1E-4500-AEA3-2491B3C20E11} = {082E4BDF-CDB1-4594-8976-EE9BD7CCDA67}
+		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA} = {02F7F265-9973-4C7D-B554-C5DD1D8C8176}
 	EndGlobalSection
 EndGlobal
