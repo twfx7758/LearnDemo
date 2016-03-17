@@ -25,10 +25,10 @@ namespace RabbitService
         {
             LogLocation.Log = new LogInfo();
             RabbitMQClientContext context = new RabbitMQClientContext() { ListenQueueName = "LogQueue" };
-            RabbitMQConsumer<EventMessage> consumer = new RabbitMQConsumer<EventMessage>() {
+            RabbitMQConsumer<EventMessage<string>, string> consumer = new RabbitMQConsumer<EventMessage<string>, string>() {
                  Context = context,
                  ActionMessage = b => {
-                     Console.WriteLine(b.MessageContent);
+                     Console.WriteLine(b.MessageEntity);
                      b.IsOperationOk = true;
                  }
             };

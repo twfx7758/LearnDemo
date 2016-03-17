@@ -10,9 +10,11 @@ namespace RabbitMQ.Common
 {
     public class RabbitMQClientFactory
     {
-        //公用一个连接，然后使用不同的Channel
         private static IConnection _conn = null;
-
+        /// <summary>
+        /// 消费者公用一个连接，然后使用不同的Channel
+        /// </summary>
+        /// <returns></returns>
         public static IConnection CreateConnectionForSumer()
         {
             if (_conn != null)

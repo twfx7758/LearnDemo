@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace RabbitMQ.Common
 {
-    public class RabbitMQConsumer<T> where T : IEventMessage
+    public class RabbitMQConsumer<T, V> where T : IEventMessage<V>
     {
-        private IEventMessage message = (IEventMessage)Activator.CreateInstance(typeof(T));
+        private IEventMessage<V> message = (IEventMessage<V>)Activator.CreateInstance(typeof(T));
 
         public RabbitMQClientContext Context { get; set; }
 
-        public Action<IEventMessage> ActionMessage = null;
+        public Action<IEventMessage<V>> ActionMessage = null;
 
         public void OnListening()
         {
@@ -27,15 +27,6 @@ namespace RabbitMQ.Common
             {
                 //获取连接
                 Context.ListenConnection = RabbitMQClientFactory.CreateConnectionForSumer();
-
-                //添加连接断开日志
-                Context.ListenConnection.ConnectionShutdown += (s, e) =>
-                {
-                    if (LogLocation.Log != null)
-                    {
-                        LogLocation.Log.WriteInfo("RabbitMQClient", "connection shutdown" + e.ReplyText);
-                    }
-                };
 
                 //获取通道
                 Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
