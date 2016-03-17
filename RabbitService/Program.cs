@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RabbitMQ.Common;
 
 namespace RabbitService
 {
@@ -12,6 +13,8 @@ namespace RabbitService
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("==================监听程序开启==================");
+
             RabbitMQTest();
 
             Console.ReadKey();
@@ -20,32 +23,17 @@ namespace RabbitService
         //测试RabbitMQ
         static void RabbitMQTest()
         {
-            var factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            factory.UserName = "guest";
-            factory.Password = "guest";
+            LogLocation.Log = new LogInfo();
+            RabbitMQClientContext context = new RabbitMQClientContext();
+            RabbitMQConsumer consumer = new RabbitMQConsumer() {
+                 Context = context,
+                 ActionMessage = b => {
+                     Console.WriteLine(b.MessageContent);
+                     b.IsOperationOk = true;
+                 }
+            };
 
-            using (var connection = factory.CreateConnection())
-            {
-                using (var channel = connection.CreateModel())
-                {
-                    channel.QueueDeclare("hello", false, false, false, null);
-
-                    var consumer = new QueueingBasicConsumer(channel);
-                    channel.BasicConsume("hello", true, consumer);
-
-                    Console.WriteLine(" waiting for message.");
-                    while (true)
-                    {
-                        var ea = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
-
-                        var body = ea.Body;
-                        var message = Encoding.UTF8.GetString(body);
-                        Console.WriteLine("Received {0}", message);
-
-                    }
-                }
-            }
+            consumer.OnListening();
         }
     }
 }

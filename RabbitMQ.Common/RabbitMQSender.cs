@@ -29,7 +29,8 @@ namespace RabbitMQ.Common
                     properties.DeliveryMode = deliveryMode; //消息持久化
 
                     //推送消息
-                    Context.SendChannel.BasicPublish(exChange, queue, properties, messageSerializer.SerializerBytes(eventMessage));
+                    byte[] message = messageSerializer.SerializerBytes(eventMessage);
+                    Context.SendChannel.BasicPublish(exChange, queue, properties, message);
                 }
             }
         }

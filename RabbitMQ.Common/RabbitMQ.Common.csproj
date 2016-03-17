@@ -46,8 +46,8 @@
   <ItemGroup>
     <Compile Include="EventMessage.cs" />
     <Compile Include="ILog.cs" />
+    <Compile Include="LogInfo.cs" />
     <Compile Include="LogLocation.cs" />
-    <Compile Include="MessageProcessResult.cs" />
     <Compile Include="MessageSerializer.cs" />
     <Compile Include="MessageSerializerFactory.cs" />
     <Compile Include="MqConfigComFactory.cs" />

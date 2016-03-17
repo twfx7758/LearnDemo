@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RabbitMQ.Common
 {
+    [Serializable]
     public class EventMessage
     {
         public bool IsOperationOk { get; set; }

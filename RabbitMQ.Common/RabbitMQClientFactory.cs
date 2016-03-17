@@ -10,6 +10,7 @@ namespace RabbitMQ.Common
 {
     public class RabbitMQClientFactory
     {
+        //公用一个连接，然后使用不同的Channel
         private static IConnection _conn = null;
 
         public static IConnection CreateConnectionForSumer()

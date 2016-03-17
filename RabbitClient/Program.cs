@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
+using RabbitMQ.Common;
 
 namespace RabbitClient
 {
@@ -20,22 +19,15 @@ namespace RabbitClient
         //测试RabbitMQ
         static void RabbitMQTest()
         {
-            var factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            factory.UserName = "guest";
-            factory.Password = "guest";
+            RabbitMQClientContext context = new RabbitMQClientContext();
 
-            using (var connection = factory.CreateConnection())
-            {
-                using (var channel = connection.CreateModel())
-                {
-                    channel.QueueDeclare("hello", false, false, false, null);
-                    string message = "Hello World";
-                    var body = Encoding.UTF8.GetBytes(message);
-                    channel.BasicPublish("", "hello", null, body);
-                    Console.WriteLine(" set {0}", message);
-                }
-            }
+            EventMessage message = new EventMessage() {
+                IsOperationOk = false,
+                MessageContent = "测试客户端类库"
+            };
+
+            RabbitMQSender sender = new RabbitMQSender() { Context = context };
+            sender.TriggerEventMessage(message, "", "Info");
         }
     }
 }

@@ -11,7 +11,7 @@ namespace RabbitMQ.Common
     {
         public RabbitMQClientContext Context { get; set; }
 
-        public Action<EventMessage> _actionMessage = null;
+        public Action<EventMessage> ActionMessage = null;
 
         public void OnListening()
         {
@@ -60,8 +60,8 @@ namespace RabbitMQ.Common
             {
                 var result = EventMessage.BuildEventMessageResult(args.Body);
 
-                if (_actionMessage == null)
-                    _actionMessage(result);//触发外部监听事件，处理此消息
+                if (ActionMessage == null)
+                    ActionMessage(result);//触发外部监听事件，处理此消息
 
                 if (!result.IsOperationOk)
                 {
