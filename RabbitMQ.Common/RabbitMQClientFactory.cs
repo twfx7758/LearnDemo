@@ -15,11 +15,20 @@ namespace RabbitMQ.Common
 
         public static IConnection CreateConnectionForSumer()
         {
-            if (_conn != null) return _conn;
+            if (_conn != null)
+                return _conn;
 
             IConnection tempConn = CreateConnection();
-
             Interlocked.CompareExchange(ref _conn, tempConn, null);
+
+            //添加连接断开日志
+            _conn.ConnectionShutdown += (s, e) =>
+            {
+                if (LogLocation.Log != null)
+                {
+                    LogLocation.Log.WriteInfo("RabbitMQClient", "connection shutdown" + e.ReplyText);
+                }
+            };
 
             return _conn;
         }
