@@ -59,6 +59,7 @@
     <Compile Include="Attribute\OSVERSIONINFO.cs" />
     <Compile Include="Redis\RedisClient.cs" />
     <Compile Include="Redis\RedisConfigInfo.cs" />
+    <Compile Include="Redis\RedisConsumer.cs" />
     <Compile Include="Redis\RedisManager.cs" />
     <Compile Include="ThreadLock\AnthorHybridLock.cs" />
     <Compile Include="Interface\IAddIn.cs" />
