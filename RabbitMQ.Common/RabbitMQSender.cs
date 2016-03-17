@@ -20,7 +20,7 @@ namespace RabbitMQ.Common
                 //获取发送通道
                 Context.SendChannel = RabbitMQClientFactory.CreateModel(Context.SendConnection);
 
-                const byte deliveryMode = 2;
+                const byte deliveryMode = 2;//消息交换模式，1、短暂的，2、持久的
 
                 using (Context.SendChannel)
                 {
