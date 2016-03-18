@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RabbitMQ.Common
 {
-    public class RabbitMQClientFactory
+    public static class RabbitMQClientFactory
     {
         private static IConnection _conn = null;
         /// <summary>

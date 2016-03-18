@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace RabbitMQ.Common
 {
-    public class RabbitMQConsumer<T, V> where T : IEventMessage<V>
+    public class RabbitMQConsumer<T>
     {
-        private IEventMessage<V> message = (IEventMessage<V>)Activator.CreateInstance(typeof(T));
+        public IEventMessage<T> message { get; set; }
 
         public RabbitMQClientContext Context { get; set; }
 
-        public Action<IEventMessage<V>> ActionMessage = null;
+        public Action<IEventMessage<T>> ActionMessage = null;
 
         public void OnListening()
         {
@@ -26,30 +26,33 @@ namespace RabbitMQ.Common
             try
             {
                 //获取连接
-                Context.ListenConnection = RabbitMQClientFactory.CreateConnectionForSumer();
+                lock(this)
+                {
+                    Context.ListenConnection = RabbitMQClientFactory.CreateConnectionForSumer();
+                    //获取通道
+                    Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
 
-                //获取通道
-                Context.ListenChannel = RabbitMQClientFactory.CreateModel(Context.ListenConnection);
 
-                //创建事件驱动的消费者模型
-                //QueueingBasicConsumer这个是队列的消费者
-                var consumer = new EventingBasicConsumer(Context.ListenChannel);
-                
-                consumer.Received += Consumer_Received;
+                    //创建事件驱动的消费者模型
+                    //QueueingBasicConsumer这个是队列的消费者
+                    var consumer = new EventingBasicConsumer(Context.ListenChannel);
 
-                /*一次只获取一条消息进行消费
-                公平分发：
-                你可能会注意到，消息的分发可能并没有如我们想要的那样公平分配。比如，对于两个工作者。
-                当奇数个消息的任务比较重，但是偶数个消息任务比较轻时，奇数个工作者始终处理忙碌状态，
-                而偶数个工作者始终处理空闲状态。但是RabbitMQ并不知道这些，他仍然会平均依次的分发消息。
+                    consumer.Received += Consumer_Received;
 
-                为了改变这一状态，我们可以使用basicQos方法，设置perfetchCount=1 。这样就告诉RabbitMQ 
-                不要在同一时间给一个工作者发送多于1个的消息，或者换句话说。
-                在一个工作者还在处理消息，并且没有响应消息之前，不要给他分发新的消息。
-                相反，将这条新的消息发送给下一个不那么忙碌的工作者。
-                */
-                Context.ListenChannel.BasicQos(0, 1, false);
-                Context.ListenChannel.BasicConsume(Context.ListenQueueName, false, consumer);
+                    /*一次只获取一条消息进行消费
+                    公平分发：
+                    你可能会注意到，消息的分发可能并没有如我们想要的那样公平分配。比如，对于两个工作者。
+                    当奇数个消息的任务比较重，但是偶数个消息任务比较轻时，奇数个工作者始终处理忙碌状态，
+                    而偶数个工作者始终处理空闲状态。但是RabbitMQ并不知道这些，他仍然会平均依次的分发消息。
+
+                    为了改变这一状态，我们可以使用basicQos方法，设置perfetchCount=1 。这样就告诉RabbitMQ 
+                    不要在同一时间给一个工作者发送多于1个的消息，或者换句话说。
+                    在一个工作者还在处理消息，并且没有响应消息之前，不要给他分发新的消息。
+                    相反，将这条新的消息发送给下一个不那么忙碌的工作者。
+                    */
+                    Context.ListenChannel.BasicQos(0, 1, false);
+                    Context.ListenChannel.BasicConsume(Context.ListenQueueName, false, consumer);
+                }
             }
             catch (Exception ex)
             {
