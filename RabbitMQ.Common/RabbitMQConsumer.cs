@@ -87,6 +87,7 @@ namespace RabbitMQ.Common
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
     }
