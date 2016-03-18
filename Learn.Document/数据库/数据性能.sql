@@ -1,0 +1,45 @@
+SELECT wait_type, start_time, interval_wait_s
+FROM dbo.fn_interval_waits('20150826', '20150827') AS F
+WHERE wait_type NOT IN (
+'CLR_SEMAPHORE', 'LAZYWRITER_SLEEP', 'RESOURCE_QUEUE', 'SLEEP_TASK',
+'SLEEP_SYSTEMTASK', 'SQLTRACE_BUFFER_FLUSH', 'WAITFOR', 'LOGMGR_QUEUE',
+'CHECKPOINT_QUEUE', 'REQUEST_FOR_DEADLOCK_SEARCH', 'XE_TIMER_EVENT',
+'BROKER_TO_FLUSH', 'BROKER_TASK_STOP', 'CLR_MANUAL_EVENT', 'CLR_AUTO_EVENT',
+'DISPATCHER_QUEUE_SEMAPHORE', 'FT_IFTS_SCHEDULER_IDLE_WAIT',
+'XE_DISPATCHER_WAIT', 'XE_DISPATCHER_JOIN', 'BROKER_EVENTHANDLER',
+'TRACEWRITE', 'FT_IFTSHC_MUTEX', 'SQLTRACE_INCREMENTAL_FLUSH_SLEEP',
+'BROKER_RECEIVE_WAITFOR', 'ONDEMAND_TASK_QUEUE', 'DBMIRROR_EVENTS_QUEUE',
+'DBMIRRORING_CMD', 'BROKER_TRANSMITTER', 'SQLTRACE_WAIT_ENTRIES',
+'SLEEP_BPOOL_FLUSH', 'SP_SERVER_DIAGNOSTICS_SLEEP', 'HADR_FILESTREAM_IOMGR_IOCOMPLETION')
+AND interval_wait_s<>0
+ORDER BY SUM(interval_wait_s) OVER(PARTITION BY wait_type) DESC, wait_type, start_time;
+
+GO
+
+--SELECT COUNT(1) FROM GanJiWebInfo
+
+--SELECT * FROM sys.indexes WHERE [OBJECT_ID]=OBJECT_ID('GanJiWebInfo')
+
+--SELECT * FROM sys.partitions  WHERE [OBJECT_ID]=OBJECT_ID('GanJiWebInfo')
+
+--SELECT * FROM sys.allocation_units  WHERE container_id=72057594038779904
+
+--SELECT * FROM sys.dm_db_index_physical_stats(DB_ID('Crawler'), OBJECT_ID('GanJiWebInfo'), 1, NULL, 'DETAILED')
+
+--DECLARE @dbid AS INT,@traceid AS INT;
+--SET @dbid = DB_ID('Crawler');
+--EXEC dbo.sp_perfworkload_trace_start @dbid, 'E:\20150828.trc', @traceid OUTPUT;	
+
+--跟踪数据加载到表
+--IF OBJECT_ID('dbo.workload') IS NOT NULL
+--	DROP TABLE dbo.workload;
+--GO
+
+--SELECT CAST(TextData AS NVARCHAR(MAX)) AS tsql_code,
+--duration AS duration
+--INTO dbo.workload
+--FROM sys.fn_trace_gettable('E:\20150828.trc.trc', NULL) AS t
+--WHERE Duration IS NOT NULL;
+
+--SELECT * FROM [workload]
+--ORDER BY duration DESC 
