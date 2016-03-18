@@ -42,6 +42,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="上线模版\上线申请单.doc" />
+    <None Include="上线模版\上线计划.docx" />
+    <None Include="上线模版\回退计划.doc" />
+    <None Include="绩效模块\员工季度工作总结%28姓名%29.docx" />
+    <None Include="绩效模块\绩效考核表 %28研发工程师%29.xlsx" />
+    <None Include="绩效模块\绩效考核表 %28研发经理%29.xlsx" />
+    <None Include="职业成就\技术人员职业成就体系申请表.xlsx" />
+    <None Include="职业成就\易车技术人员职业成就体系文件20151123.pdf" />
+    <None Include="职业成就\职业成就体系方向划分及评选标准%2820151210修订版%29.xlsx" />
+    <None Include="设计模式\抽像工厂模式.docx" />
     <None Include="设计模式\设计模式.docx" />
     <None Include="设计模式\简单工厂模式.docx" />
   </ItemGroup>
