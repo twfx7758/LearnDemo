@@ -55,7 +55,7 @@
     <Compile Include="Config\MqConfigDom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Context\RabbitMQClientContext.cs" />
-    <Compile Include="Context\RabbitMQClientFactory.cs" />
+    <Compile Include="Config\RabbitMQClientFactory.cs" />
     <Compile Include="RabbitMQConsumer.cs" />
     <Compile Include="RabbitMQSender.cs" />
   </ItemGroup>
