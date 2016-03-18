@@ -44,18 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\EventMessage.cs" />
-    <Compile Include="Common\IEventMessage.cs" />
+    <Compile Include="Message\EventMessage.cs" />
+    <Compile Include="Message\IEventMessage.cs" />
     <Compile Include="Log\ILog.cs" />
     <Compile Include="Log\LogInfo.cs" />
     <Compile Include="Log\LogLocation.cs" />
-    <Compile Include="Common\MessageSerializer.cs" />
-    <Compile Include="MessageSerializerFactory.cs" />
-    <Compile Include="MqConfigComFactory.cs" />
-    <Compile Include="Common\MqConfigDom.cs" />
+    <Compile Include="Message\MessageSerializer.cs" />
+    <Compile Include="Message\MessageSerializerFactory.cs" />
+    <Compile Include="Config\MqConfigComFactory.cs" />
+    <Compile Include="Config\MqConfigDom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\RabbitMQClientContext.cs" />
-    <Compile Include="RabbitMQClientFactory.cs" />
+    <Compile Include="Context\RabbitMQClientContext.cs" />
+    <Compile Include="Context\RabbitMQClientFactory.cs" />
     <Compile Include="RabbitMQConsumer.cs" />
     <Compile Include="RabbitMQSender.cs" />
   </ItemGroup>
