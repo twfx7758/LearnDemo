@@ -27,7 +27,7 @@ namespace RabbitMQ.Common
 
                     //消息持久化
                     var properties = Context.SendChannel.CreateBasicProperties();
-                    properties.DeliveryMode = eventMessage.deliveryMode; 
+                    properties.DeliveryMode = eventMessage.deliveryMode;
 
                     //推送消息
                     byte[] message = messageSerializer.SerializerBytes(eventMessage);
