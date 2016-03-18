@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="数据库\数据性能.sql" />
+    <Content Include="数据库\跟踪脚本.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
