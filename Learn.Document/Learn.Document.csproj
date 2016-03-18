@@ -56,6 +56,9 @@
     <None Include="设计模式\设计模式.docx" />
     <None Include="设计模式\简单工厂模式.docx" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="数据库\事件跟踪脚本.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
