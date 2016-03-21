@@ -15,10 +15,10 @@ namespace WCF.Hosting
         static void Main(string[] args)
         {
             //基地址 + 相对地址
-            //HostByBaseAddress();
+            HostByBaseAddress();
 
             //测试yield返回IEnumerable<T>类型
-            HostForDemoService();
+            //HostForDemoService();
         }
 
         //测试yield返回IEnumerable<T>类型
@@ -40,21 +40,21 @@ namespace WCF.Hosting
         /// </summary>
         static void HostByBaseAddress()
         {
-            Uri[] baseAddress = new Uri[2];
-            baseAddress[0] = new Uri("http://127.0.0.1/myservices");
-            baseAddress[1] = new Uri("net.tcp://127.0.0.1/myservices");
-            using (ServiceHost host = new ServiceHost(typeof(CalculatorService), baseAddress))
+            //Uri[] baseAddress = new Uri[1];
+            //baseAddress[0] = new Uri("http://127.0.0.1:8888/myservices");
+            //baseAddress[1] = new Uri("net.tcp://127.0.0.1/myservices");
+            using (ServiceHost host = new ServiceHost(typeof(CalculatorService), new Uri("http://127.0.0.1:8888/calculatorservice")))
             {
                 //在配置里添加Behaviors
                 host.AddServiceEndpoint(typeof(ICalculate), new WSHttpBinding(), "calculatorservice");
-                host.AddServiceEndpoint(typeof(ICalculate), new NetTcpBinding(), "calculatorservice");
-                //if (host.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
-                //{
-                //    ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
-                //    behavior.HttpGetEnabled = true;
-                //    behavior.HttpGetUrl = new Uri("http://127.0.0.1/calculatorservice");
-                //    host.Description.Behaviors.Add(behavior);
-                //}
+                //host.AddServiceEndpoint(typeof(ICalculate), new NetTcpBinding(), "calculatorservice");
+                if (host.Description.Behaviors.Find<ServiceMetadataBehavior>() == null)
+                {
+                    ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();
+                    behavior.HttpGetEnabled = true;
+                    behavior.HttpGetUrl = new Uri("http://127.0.0.1:8888/calculatorservice/metadata");
+                    host.Description.Behaviors.Add(behavior);
+                }
 
                 host.Opened += (s, e) => { Console.Write("CalculatorService服务已经启动，按任意键终止服务！"); };
 
