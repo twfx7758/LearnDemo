@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="defb086e-627c-40b0-9ecf-6ac418d984b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.kf.com/WASHostService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WASHostService.disco" MetadataType="Disco" ID="b73f290f-5eab-4f16-ab34-571bd46f6f1b" SourceId="1" SourceUrl="http://www.kf.com/WASHostService.svc?disco" />
+    <MetadataFile FileName="WASHostService.wsdl" MetadataType="Wsdl" ID="7a7a9bcd-dc34-4750-86f7-20a68fd44a63" SourceId="1" SourceUrl="http://www.kf.com/WASHostService.svc?wsdl" />
+    <MetadataFile FileName="WASHostService.xsd" MetadataType="Schema" ID="0b510a7e-7096-4d8f-94cc-ba0da575f638" SourceId="1" SourceUrl="http://www.kf.com/WASHostService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WASHostService1.wsdl" MetadataType="Wsdl" ID="6dec1a9d-4a81-4b48-903d-e9f3f3176438" SourceId="1" SourceUrl="http://www.kf.com/WASHostService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="WASHostService1.xsd" MetadataType="Schema" ID="a2c87780-d079-48b9-8254-0c0df63c7642" SourceId="1" SourceUrl="http://www.kf.com/WASHostService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -18,10 +18,13 @@ namespace WCF.Client
             //new ServiceInvoker().Add(10, 12.5);
 
             //监听服务
-            ServiceListener();
+            //ServiceListener();
 
             //测试延迟执行关键字yield
             //new ServiceInvoker().MainMethod();
+
+            //获取服务调用端的IP地址
+            new ServiceInvoker().GetWasHost();
 
             Console.ReadLine();
         }

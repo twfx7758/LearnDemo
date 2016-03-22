@@ -7,10 +7,10 @@ using System.ServiceModel;
 
 namespace WCF.Service.Interface
 {
-    [ServiceContract(Namespace = "http://www.kf.com/WASHost")]
+    [ServiceContract(Namespace = "http://www.kf.com/WASHost", Name = "WasHost")]
     public interface IWASHostService
     {
         [OperationContract]
-        string HelloWCF(string str);
+        string HelloWCF();
     }
 }

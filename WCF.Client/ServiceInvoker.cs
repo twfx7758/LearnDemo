@@ -34,5 +34,14 @@ namespace WCF.Client
             Console.WriteLine("2线程ID：{0}", Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine("计算结果：{0}", lastVal);
         }
+
+
+        public async void GetWasHost()
+        {
+            Api.Wcf.WAS.WasHostClient client = new Api.Wcf.WAS.WasHostClient();
+            var result = await client.HelloWCFAsync();
+            Console.WriteLine(result);
+            client.Close();
+        }
     }
 }
