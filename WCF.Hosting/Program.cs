@@ -27,7 +27,7 @@ namespace WCF.Hosting
             using (ServiceHost host = new ServiceHost(typeof(DemoService)))
             {
                 //host.AddServiceEndpoint(typeof(IDemoService), new WSHttpBinding(), new Uri("http://127.0.0.1:3721/DemoService"));
-                host.Opened += (s, e) => { Console.Write("DemoService服务已经启动，按任意键终止服务！"); };
+                host.Opened += (s, e) => { Console.WriteLine("DemoService服务已经启动，按任意键终止服务！"); };
 
                 host.Open();
 
@@ -56,7 +56,7 @@ namespace WCF.Hosting
                     host.Description.Behaviors.Add(behavior);
                 }
 
-                host.Opened += (s, e) => { Console.Write("CalculatorService服务已经启动，按任意键终止服务！"); };
+                host.Opened += (s, e) => { Console.WriteLine("CalculatorService服务已经启动，按任意键终止服务！"); };
 
                 host.Open();
 
