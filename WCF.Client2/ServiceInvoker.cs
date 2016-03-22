@@ -14,11 +14,11 @@ namespace WCF.Client2
         {
             //不需要在web.config里配置终结点
             using (ChannelFactory<ICalculate> channelFactory =
-                new ChannelFactory<ICalculate>(new WSHttpBinding(), "http://127.0.0.1:8888/calculatorservice"))
+                new ChannelFactory<ICalculate>(new BasicHttpBinding(), "http://127.0.0.1/myservices/calculatorservice"))
             {
                 ICalculate client = channelFactory.CreateChannel();
 
-                Console.WriteLine("计算结果：{0}", client.Add(3, 7));
+                Console.WriteLine("计算结果：{0}", client.Add(x, y));
             }
         }
 
