@@ -60,6 +60,7 @@ namespace WCF.SDK
                 WriteMessage(requestMessage, int.MaxValue, 
                 BufferManager.CreateBufferManager(long.MaxValue, int.MaxValue));
             webRequest.ContentLength = bytes.Array.Length;
+            webRequest.GetRequestStream().Write(bytes.Array, 0, bytes.Array.Length);
             webRequest.GetRequestStream().Close();
             WebResponse webResponse = webRequest.GetResponse();
 

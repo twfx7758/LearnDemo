@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WCF.Service.Interface;
 using System.ServiceModel;
 using System.Diagnostics;
+using WCF.SDK;
 
 namespace WCF.Client2
 {
@@ -32,6 +33,16 @@ namespace WCF.Client2
                 Console.WriteLine("计算结果：{0}", client.Add(3, 7));
             }
         }
-        
+
+
+        public void InvokeForSmallWcf()
+        {
+            Uri address = new Uri("http://www.kf.com/calculatorservice");
+            ServiceProxyFactory<ICalculate> factory =
+                new ServiceProxyFactory<ICalculate>(address);
+            ICalculate proxy = factory.CreateChannel();
+
+            Console.WriteLine("x + y = {2} when x = {0} and y = {1}", 1, 2, proxy.Add(1, 2));
+        }
     }
 }

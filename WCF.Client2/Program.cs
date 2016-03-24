@@ -14,7 +14,7 @@ namespace WCF.Client2
     {
         static void Main(string[] args)
         {
-            new ServiceInvoker().Add(10.1, 12.2);
+            new ServiceInvoker().InvokeForSmallWcf();
             //客户端通道发送消息
             //SendMessageClient();
             //DemoServiceClient();
