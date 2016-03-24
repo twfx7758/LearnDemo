@@ -69,12 +69,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WCF.SDK\WCF.SDK.csproj">
+      <Project>{0ae999cc-b473-4b3f-83c4-5b288dd49e48}</Project>
+      <Name>WCF.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WCF.Service.Interface\WCF.Service.Interface.csproj">
       <Project>{bc60d6da-3466-4391-908c-229f84749627}</Project>
       <Name>WCF.Service.Interface</Name>

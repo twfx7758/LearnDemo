@@ -7,7 +7,7 @@ using System.ServiceModel;
 
 namespace WCF.Service.Interface
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://www.kf.com/")]
     public interface ICalculate
     {
         [OperationContract]

@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Web" />
@@ -47,12 +48,18 @@
     <Compile Include="ChannelStack\SimpleChannelListenerBase.cs" />
     <Compile Include="ChannelStack\SimpleDatagramChannelListener.cs" />
     <Compile Include="Common\SqlHelper.cs" />
+    <Compile Include="WcfArtech\ComponentBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Channel\SampleChannelBase.cs" />
     <Compile Include="Channel\SimpleDuplexSessionChannel.cs" />
     <Compile Include="Channel\SimpleReplyChannel.cs" />
     <Compile Include="Channel\SimpleRequestChannel.cs" />
-    <Compile Include="WcfHandler.cs" />
+    <Compile Include="WcfArtech\RouteMapping.cs" />
+    <Compile Include="WcfArtech\RouteTable.cs" />
+    <Compile Include="WcfArtech\ServiceChannelProxy.cs" />
+    <Compile Include="WcfArtech\ServiceProxyFactory.cs" />
+    <Compile Include="WcfArtech\WcfHandler.cs" />
+    <Compile Include="WcfArtech\WcfHttpModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
