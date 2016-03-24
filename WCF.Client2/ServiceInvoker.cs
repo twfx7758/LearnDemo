@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WCF.Service.Interface;
 using System.ServiceModel;
+using System.Diagnostics;
 
 namespace WCF.Client2
 {
@@ -17,7 +18,6 @@ namespace WCF.Client2
                 new ChannelFactory<ICalculate>(new BasicHttpBinding(), "http://127.0.0.1/myservices/calculatorservice"))
             {
                 ICalculate client = channelFactory.CreateChannel();
-
                 Console.WriteLine("计算结果：{0}", client.Add(x, y));
             }
         }

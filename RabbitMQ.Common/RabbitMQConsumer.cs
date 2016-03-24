@@ -10,11 +10,19 @@ namespace RabbitMQ.Common
 {
     public class RabbitMQConsumer<T>
     {
-        public IEventMessage<T> message { get; set; }
+        public RabbitMQClientContext Context { get; private set; }
 
-        public RabbitMQClientContext Context { get; set; }
+        public IEventMessage<T> Message { get; private set; }
 
         public Action<IEventMessage<T>> ActionMessage = null;
+
+        private RabbitMQConsumer() { }
+
+        public RabbitMQConsumer(RabbitMQClientContext context, IEventMessage<T> message)
+        {
+            this.Context = context;
+            this.Message = message;
+        }
 
         public void OnListening()
         {
@@ -67,7 +75,7 @@ namespace RabbitMQ.Common
         {
             try
             {
-                var result = message.BuildEventMessageResult(args.Body);
+                var result = Message.BuildEventMessageResult(args.Body);
 
                 if (ActionMessage != null)
                     ActionMessage(result);//触发外部监听事件，处理此消息

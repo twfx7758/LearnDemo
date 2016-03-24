@@ -35,6 +35,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,7 @@
     <Compile Include="Channel\SimpleDuplexSessionChannel.cs" />
     <Compile Include="Channel\SimpleReplyChannel.cs" />
     <Compile Include="Channel\SimpleRequestChannel.cs" />
+    <Compile Include="WcfHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

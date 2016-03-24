@@ -8,9 +8,17 @@ namespace RabbitMQ.Common
 {
     public class RabbitMQSender<T>
     {
-        public RabbitMQClientContext Context { get; set; }
+        public RabbitMQClientContext Context { get; private set; }
 
-        public IEventMessage<T> message { get; set; }
+        public IEventMessage<T> Message { get; private set; }
+
+        private RabbitMQSender() { }
+
+        public RabbitMQSender(RabbitMQClientContext context, IEventMessage<T> message)
+        {
+            this.Context = context;
+            this.Message = message;
+        }
 
         //客户端发送消息的时候要标记上消息的持久化状态
         //可以在创建队列的时候设置此队列是持久化的，但是队列中的消息要在我们发送某个消息的时候打上需要持久化的状态标记。
@@ -29,10 +37,10 @@ namespace RabbitMQ.Common
 
                     //消息持久化
                     var properties = Context.SendChannel.CreateBasicProperties();
-                    properties.DeliveryMode = message.deliveryMode;
+                    properties.DeliveryMode = Message.deliveryMode;
 
                     //推送消息
-                    byte[] sMessage = messageSerializer.SerializerBytes(message);
+                    byte[] sMessage = messageSerializer.SerializerBytes(Message);
                     Context.SendChannel.BasicPublish(Context.SendExchange, Context.SendQueueName, properties, sMessage);
                 }
             }

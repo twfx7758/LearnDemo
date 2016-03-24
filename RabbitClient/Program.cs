@@ -30,7 +30,7 @@ namespace RabbitClient
                 deliveryMode = 2
             };
 
-            RabbitMQSender<string> sender = new RabbitMQSender<string>() { Context = context2, message = message };
+            RabbitMQSender<string> sender = new RabbitMQSender<string>(context2, message);
             sender.TriggerEventMessage();
         }
     }

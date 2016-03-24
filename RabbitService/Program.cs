@@ -32,13 +32,11 @@ namespace RabbitService
                 ListenQueueName = "LogQueue"
             };
 
-            RabbitMQConsumer<string> consumer = new RabbitMQConsumer<string>() {
-                Context = context,
+            RabbitMQConsumer<string> consumer = new RabbitMQConsumer<string>(context, new EventMessage<string>()) {
                 ActionMessage = b => {
                     Console.WriteLine(b.MessageEntity);
                     b.IsOperationOk = true;
-                },
-                message = new EventMessage<string>()
+                } 
             };
 
             consumer.OnListening();
