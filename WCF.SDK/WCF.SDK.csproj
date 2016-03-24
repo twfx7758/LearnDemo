@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelStack\SimpleChannelListenerBase.cs" />
-    <Compile Include="ChannelStack\SimpleDatagramChannelListener.cs" />
     <Compile Include="Common\SqlHelper.cs" />
+    <Compile Include="Extensions\Channel\MyBinding.cs" />
+    <Compile Include="Extensions\Channel\MyBindingElement.cs" />
+    <Compile Include="Extensions\Channel\MyChannelFactory.cs" />
+    <Compile Include="Extensions\Channel\MyChannelListener.cs" />
+    <Compile Include="Extensions\Channel\MyReplyChannel.cs" />
+    <Compile Include="Extensions\Channel\MyRequestChannel.cs" />
     <Compile Include="WcfArtech\ComponentBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Channel\SampleChannelBase.cs" />
-    <Compile Include="Channel\SimpleDuplexSessionChannel.cs" />
-    <Compile Include="Channel\SimpleReplyChannel.cs" />
-    <Compile Include="Channel\SimpleRequestChannel.cs" />
     <Compile Include="WcfArtech\RouteMapping.cs" />
     <Compile Include="WcfArtech\RouteTable.cs" />
     <Compile Include="WcfArtech\ServiceChannelProxy.cs" />
@@ -61,9 +61,7 @@
     <Compile Include="WcfArtech\WcfHandler.cs" />
     <Compile Include="WcfArtech\WcfHttpModule.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
