@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AOPRealProxy.cs" />
     <Compile Include="Attribute\AOPProxyAttribute.cs" />
+    <Compile Include="Implementation\TransactionAOP.cs" />
     <Compile Include="Interface\IInterception.cs" />
     <Compile Include="Interface\IProxyDI.cs" />
     <Compile Include="Implementation\NullInterception.cs" />
