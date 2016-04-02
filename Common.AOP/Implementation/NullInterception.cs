@@ -11,17 +11,17 @@ namespace Common.AOP.Implementation
     {
         public void ExceptionHandle()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Method Invoker ExceptionHandle()");
         }
 
         public void PostInvoke()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Method Invoker PostInvoke()");
         }
 
         public void PreInvoke()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Method Invoker PreInvoke()");
         }
     }
 }
