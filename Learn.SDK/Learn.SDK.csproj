@@ -62,6 +62,7 @@
     <Compile Include="Redis\RedisConsumer.cs" />
     <Compile Include="Redis\RedisManager.cs" />
     <Compile Include="Redis\RedisTrans.cs" />
+    <Compile Include="SqlVerifyProxy.cs" />
     <Compile Include="ThreadLock\AnthorHybridLock.cs" />
     <Compile Include="Interface\IAddIn.cs" />
     <Compile Include="PipeClient.cs" />
