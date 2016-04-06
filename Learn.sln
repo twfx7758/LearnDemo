@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.CSharpForCLR", "Learn.CSharpForCLR\Learn.CSharpForCLR.csproj", "{DC72A538-0702-4139-B687-AF990CCEF25E}"
 EndProject
@@ -92,6 +92,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AOP", "AOP", "{5197E2F6-06FE-4ABF-ACD4-FFA91F2043FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.AOP", "Common.AOP\Common.AOP.csproj", "{49CCFFEE-06C5-4376-B8B3-B1B5C27B5FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOP.Artech", "AOP.Artech\AOP.Artech.csproj", "{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -393,6 +395,18 @@ Global
 		{49CCFFEE-06C5-4376-B8B3-B1B5C27B5FFD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{49CCFFEE-06C5-4376-B8B3-B1B5C27B5FFD}.Release|Win32.ActiveCfg = Release|Any CPU
 		{49CCFFEE-06C5-4376-B8B3-B1B5C27B5FFD}.Release|Win32.Build.0 = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Debug|Win32.Build.0 = Debug|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Win32.ActiveCfg = Release|Any CPU
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -430,5 +444,6 @@ Global
 		{5769DCB6-0E9C-4B20-AB7F-5E35D026F1DA} = {02F7F265-9973-4C7D-B554-C5DD1D8C8176}
 		{006C9039-8BAF-4D79-9C2A-6BDD1B6F1515} = {FCB0B09B-15BD-4B0D-8447-A8F565179035}
 		{49CCFFEE-06C5-4376-B8B3-B1B5C27B5FFD} = {5197E2F6-06FE-4ABF-ACD4-FFA91F2043FD}
+		{AC813A07-A99B-4E24-B1C5-DE4D6B3DBB99} = {5197E2F6-06FE-4ABF-ACD4-FFA91F2043FD}
 	EndGlobalSection
 EndGlobal
