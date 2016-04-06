@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using RabbitMQ.Common;
 using System.Threading;
+using Newbie.RabbitMQ;
 
 namespace RabbitService
 {

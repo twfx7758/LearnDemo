@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1A993889-DCC2-4807-A645-1C9ED77BA8CF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{7B959F5A-433F-421C-B0B9-069D6B9D1C81}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RabbitClient</RootNamespace>
-    <AssemblyName>RabbitClient</AssemblyName>
+    <RootNamespace>Newbie.RabbitMQ</RootNamespace>
+    <AssemblyName>Newbie.RabbitMQ</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\lib\RabbitMQ\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,17 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Config\MqConfigComFactory.cs" />
+    <Compile Include="Config\MqConfigDom.cs" />
+    <Compile Include="Config\RabbitMQClientFactory.cs" />
+    <Compile Include="Context\RabbitMQClientContext.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\LogInfo.cs" />
+    <Compile Include="Log\LogLocation.cs" />
+    <Compile Include="Message\EventMessage.cs" />
+    <Compile Include="Message\IEventMessage.cs" />
+    <Compile Include="Message\MessageSerializer.cs" />
+    <Compile Include="Message\MessageSerializerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Newbie.RabbitMQ\Newbie.RabbitMQ.csproj">
-      <Project>{7b959f5a-433f-421c-b0b9-069d6b9d1c81}</Project>
-      <Name>Newbie.RabbitMQ</Name>
-    </ProjectReference>
+    <Compile Include="RabbitMQConsumer.cs" />
+    <Compile Include="RabbitMQSender.cs" />
+    <Compile Include="RabbitMQueueBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
