@@ -13,6 +13,7 @@ namespace Learn.AOP.Test
         public static void MainMethod()
         {
             InstanceBuilder.Create<AopCls, IAopCls>().GetProcessResult(3);
+            InstanceBuilder.Create<AopCls, IAopCls>().TransProcessResult(3);
         }
     }
 
@@ -23,13 +24,21 @@ namespace Learn.AOP.Test
         {
             if (args < 10)
             {
-                throw new Exception("抛出异常信息");
+                int a = args / 0;
             }
+        }
+
+        [ExceptionCallHandler(Ordinal = 1, MessageTemplate = "Encounter error:\nMessage:{Message}")]
+        [TransactionScopeCallHandler(Ordinal = 2)]
+        public void TransProcessResult(int args)
+        {
+            int a = args / 0;
         }
     }
 
     public interface IAopCls
     {
         void GetProcessResult(int args);
+        void TransProcessResult(int args);
     }
 }
