@@ -10,6 +10,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Learn.SDK.Redis;
 using Learn.SDK.Attribute;
+using Learn.AOP.Test;
 
 namespace Learn.ConsolePlat
 {
@@ -19,6 +20,7 @@ namespace Learn.ConsolePlat
         {
             //AttributeDemo();
 
+            AopInvocation.MainMethod();
 
             Console.ReadLine();
         }
