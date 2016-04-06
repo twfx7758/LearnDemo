@@ -53,10 +53,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common.AOP\Common.AOP.csproj">
-      <Project>{49ccffee-06c5-4376-b8b3-b1b5c27b5ffd}</Project>
-      <Name>Common.AOP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Learn.Algorithm\Learn.Algorithm.csproj">
       <Project>{70129802-cf52-4ea5-a66b-978fee685993}</Project>
       <Name>Learn.Algorithm</Name>
