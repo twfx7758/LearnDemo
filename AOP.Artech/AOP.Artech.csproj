@@ -40,8 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallHandlerPipeline.cs" />
+    <Compile Include="InstanceBuidler.cs" />
+    <Compile Include="InterceptingRealProxy.cs" />
+    <Compile Include="Abstract\HandlerAttribute.cs" />
+    <Compile Include="Abstract\CallHandlerBase.cs" />
+    <Compile Include="Interface\ICallHandler.cs" />
+    <Compile Include="InvocationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Artech\AOP.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
