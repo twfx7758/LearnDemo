@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOPCls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AOP.Artech\AOP.Artech.csproj">
+      <Project>{ac813a07-a99b-4e24-b1c5-de4d6b3dbb99}</Project>
+      <Name>AOP.Artech</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Learn.Algorithm\Learn.Algorithm.csproj">
       <Project>{70129802-cf52-4ea5-a66b-978fee685993}</Project>
       <Name>Learn.Algorithm</Name>

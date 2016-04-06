@@ -19,8 +19,6 @@ namespace Learn.ConsolePlat
         {
             //AttributeDemo();
 
-            AOPCls cls = new AOPCls();
-            cls.MainMethod();
 
             Console.ReadLine();
         }
