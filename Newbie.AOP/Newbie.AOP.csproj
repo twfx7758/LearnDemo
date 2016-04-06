@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Artech\AOP.png" />
+    <Content Include="Artech\Remoting架构1.gif" />
+    <Content Include="Artech\Remoting架构2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
