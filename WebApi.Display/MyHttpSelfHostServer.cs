@@ -42,7 +42,7 @@ namespace WebApi.Display
                 MethodInfo method = message.GetType().GetMethod("GetHttpRequestMessage");
                 HttpRequestMessage request = (HttpRequestMessage)method.Invoke(message, new object[] { true });
                 var processResponse = base.SendAsync(request, new CancellationTokenSource().Token);
-                processResponse.ContinueWith(task=> {
+                processResponse.ContinueWith(task => {
                     string httpMessageTypeName = "System.Web.Http.SelfHost.Channels.HttpMessage, System.Web.Http.SelfHost";
                     Type httpMessageType = Type.GetType(httpMessageTypeName);
                     Message reply = (Message)Activator.CreateInstance(httpMessageType, new object[] { task.Result });
