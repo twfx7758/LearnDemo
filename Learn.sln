@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{83D8BD93
 		lib\Redis\ServiceStack.Text.dll = lib\Redis\ServiceStack.Text.dll
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SOA", "SOA", "{50ECEEDB-C48D-45F1-9473-5C857F99D923}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WCF", "WCF", "{50ECEEDB-C48D-45F1-9473-5C857F99D923}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Service", "WCF.Service\WCF.Service.csproj", "{7874BCE0-4312-407C-9D36-6F8B37AF6B15}"
 EndProject
