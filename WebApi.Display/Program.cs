@@ -11,7 +11,7 @@ namespace WebApi.Display
     {
         static void Main(string[] args)
         {
-            HttpBingDemo.MainMethod();
+            HttpBingDemo.MainBySelfServer();
 
             //HttpClient httpClient1 = new HttpClient();
             //HttpClient httpClient2 = new HttpClient();

@@ -7,12 +7,26 @@ using System.Reflection;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Http.SelfHost.Channels;
 
 namespace WebApi.Display
 {
     public class HttpBingDemo
     {
+        public static void MainBySelfServer()
+        {
+            using (MyHttpSelfHostServer httpServer = new MyHttpSelfHostServer(new System.Web.Http.HttpConfiguration(), new Uri("http://127.0.0.1:3721")))
+            {
+                httpServer.Configuration.Routes.MapHttpRoute(
+                        name: "DefaultApi",
+                        routeTemplate: "api/{controller}/{id}",
+                        defaults: new { id = RouteParameter.Optional });
+
+                httpServer.Open();
+            }
+        }
+
         public static void MainMethod()
         {
             Uri listerUri = new Uri("http://127.0.0.1:3721");
