@@ -11,19 +11,21 @@ namespace WebApi.Display
     {
         static void Main(string[] args)
         {
-            HttpClient httpClient1 = new HttpClient();
-            HttpClient httpClient2 = new HttpClient();
-            HttpClient httpClient3 = new HttpClient();
-            HttpClient httpClient4 = new HttpClient();
+            HttpBingDemo.MainMethod();
 
-            httpClient2.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "Post");
-            httpClient3.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "PUT");
-            httpClient4.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "DELETE");
+            //HttpClient httpClient1 = new HttpClient();
+            //HttpClient httpClient2 = new HttpClient();
+            //HttpClient httpClient3 = new HttpClient();
+            //HttpClient httpClient4 = new HttpClient();
 
-            Console.WriteLine("{0,-7}{1,-24}{2,-6}", "Method", "X-HTTP-Method-Override", "Action");
+            //httpClient2.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "Post");
+            //httpClient3.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "PUT");
+            //httpClient4.DefaultRequestHeaders.Add("X-HTTP-Method-Override", "DELETE");
 
-            InvokeWebApi(httpClient1, HttpMethod.Get);
-            InvokeWebApi(httpClient2, HttpMethod.Post);
+            //Console.WriteLine("{0,-7}{1,-24}{2,-6}", "Method", "X-HTTP-Method-Override", "Action");
+
+            //InvokeWebApi(httpClient1, HttpMethod.Get);
+            //InvokeWebApi(httpClient2, HttpMethod.Post);
             //InvokeWebApi(httpClient3, HttpMethod.Put);
             //InvokeWebApi(httpClient4, HttpMethod.Delete);
 
