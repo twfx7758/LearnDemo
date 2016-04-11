@@ -87,6 +87,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Sdk", "WebApi.Sdk\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newbie.Caching", "Newbie.Caching\Newbie.Caching.csproj", "{98E94463-60F6-43E0-846B-A2C76A4780E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostSharp", "PostSharp", "{8665409E-A189-456D-9407-5FFB202AAFB0}"
+	ProjectSection(SolutionItems) = preProject
+		lib\PostSharp\PostSharp.dll = lib\PostSharp\PostSharp.dll
+		lib\PostSharp\PostSharp.Laos.dll = lib\PostSharp\PostSharp.Laos.dll
+		lib\PostSharp\PostSharp.xml = lib\PostSharp\PostSharp.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Signed", "Signed", "{5ED0BE1C-420F-4DCE-8B68-DACE07229952}"
+	ProjectSection(SolutionItems) = preProject
+		lib\PostSharp\Signed\PostSharp.dll = lib\PostSharp\Signed\PostSharp.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "STSdb", "STSdb", "{FED6A11F-B72D-48B8-A145-25890E5393DC}"
+	ProjectSection(SolutionItems) = preProject
+		lib\STSdb4.dll = lib\STSdb4.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -416,5 +433,8 @@ Global
 		{4377E28B-050D-429C-90A3-6722C36BC6E4} = {694F66DE-BDB2-4F4B-9D12-78351143A30E}
 		{3FF4EC57-0A71-494C-8486-33C8D394C37C} = {694F66DE-BDB2-4F4B-9D12-78351143A30E}
 		{98E94463-60F6-43E0-846B-A2C76A4780E1} = {5197E2F6-06FE-4ABF-ACD4-FFA91F2043FD}
+		{8665409E-A189-456D-9407-5FFB202AAFB0} = {6BDACFC5-EB80-4727-85DB-056671A506BF}
+		{5ED0BE1C-420F-4DCE-8B68-DACE07229952} = {8665409E-A189-456D-9407-5FFB202AAFB0}
+		{FED6A11F-B72D-48B8-A145-25890E5393DC} = {6BDACFC5-EB80-4727-85DB-056671A506BF}
 	EndGlobalSection
 EndGlobal
