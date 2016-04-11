@@ -1,16 +1,15 @@
-﻿using Learn.Algorithm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Learn.Framework;
 using System.Collections;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Learn.SDK.Redis;
 using Learn.SDK.Attribute;
 using Learn.AOP.Test;
+using Learn.SDK;
 
 namespace Learn.ConsolePlat
 {
