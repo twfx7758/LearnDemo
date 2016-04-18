@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="数据库\数据性能.sql" />
+    <Content Include="数据库\权限-职级设计\职级表.sql" />
+    <Content Include="数据库\权限-职级设计\获取职级成员.sql" />
+    <Content Include="数据库\权限-职级设计\设置职级.sql" />
     <Content Include="数据库\跟踪脚本.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
