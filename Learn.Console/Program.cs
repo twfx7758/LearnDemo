@@ -8,7 +8,6 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Learn.SDK.Redis;
 using Learn.SDK.Attribute;
-using Learn.AOP.Test;
 using Learn.SDK;
 
 namespace Learn.ConsolePlat
@@ -17,9 +16,7 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
-            //AttributeDemo();
-
-            AopInvocation.MainMethod();
+            AttributeDemo();
 
             Console.ReadLine();
         }

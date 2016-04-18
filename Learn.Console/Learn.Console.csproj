@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOP.Test\AopCls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,10 +56,6 @@
     <ProjectReference Include="..\Learn.SDK\Learn.SDK.csproj">
       <Project>{7ba942bd-bcb5-4720-bb29-143897358c83}</Project>
       <Name>Learn.SDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Newbie.AOP\Newbie.AOP.csproj">
-      <Project>{7507c9f1-2640-4af1-b7cc-71e28ab6c54c}</Project>
-      <Name>Newbie.AOP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
