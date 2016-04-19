@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Learn.Mvc4.Common
+namespace Learn.Mvc4
 {
     public static class HtmlHelperExtensions
     {
