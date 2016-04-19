@@ -126,6 +126,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\Razor.png" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -140,6 +141,7 @@
     <Content Include="Views\Foo\Action2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Action2.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Common\NinjectDependencyResolver.cs" />
     <Compile Include="Common\ResourceReader.cs" />
     <Compile Include="Common\SimpleRazorView.cs" />
+    <Compile Include="Common\SimpleRazorViewEngine.cs" />
     <Compile Include="Controllers\BarController.cs" />
     <Compile Include="Controllers\FooController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

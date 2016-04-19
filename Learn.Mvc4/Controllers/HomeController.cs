@@ -36,5 +36,17 @@ namespace Learn.Mvc4.Controllers
         {
             return View();
         }
+
+        public ActionResult Index2()
+        {
+            var Model = new Contact
+            {
+                Name = "屈文斌",
+                PhoneNo = "13718312531",
+                Email = "980499097@qq.com"
+            };
+
+            return View(Model);
+        }
     }
 }

@@ -20,6 +20,10 @@ namespace Learn.Mvc4
             NinjectDependencyResolver dependencyResovler = new NinjectDependencyResolver();
             dependencyResovler.Register<ResourceReader, DefaultResourceReader>();
             DependencyResolver.SetResolver(dependencyResovler);
+
+            //自定义ViewEngines
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new SimpleRazorViewEngine());
         }
 
         protected void Application_BeginRequest()
