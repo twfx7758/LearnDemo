@@ -1,0 +1,12 @@
+﻿@model Learn.Mvc4.Models.Contact
+@{
+    ViewBag.Title = Model.Name;
+}
+<br />
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel();
+    <br />
+    <input type="submit" value="保存" />
+}
+
