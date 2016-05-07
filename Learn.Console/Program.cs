@@ -16,8 +16,8 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
-            AttributeDemo();
-
+            //AttributeDemo();
+            HashDemo();
             Console.ReadLine();
         }
 
