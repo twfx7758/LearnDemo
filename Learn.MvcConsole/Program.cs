@@ -3,6 +3,7 @@ using Learn.MvcConsole.Implementation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System;
+using Microsoft.Framework.DependencyInjection;
 
 namespace Learn.MvcConsole
 {

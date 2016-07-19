@@ -59,6 +59,7 @@
     <Compile Include="Algorithm\BaseAlgorithm.cs" />
     <Compile Include="Algorithm\HashTest.cs" />
     <Compile Include="Attribute\OSVERSIONINFO.cs" />
+    <Compile Include="NSynchronizationContext.cs" />
     <Compile Include="Redis\RedisClient.cs" />
     <Compile Include="Redis\RedisConfigInfo.cs" />
     <Compile Include="Redis\RedisConsumer.cs" />

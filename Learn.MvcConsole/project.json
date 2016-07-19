@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "Learn.MvcConsole Console Application",
   "authors": [ "quwb" ],
@@ -11,7 +11,10 @@
   },
 
   "dependencies": {
-    "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final"
+    "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+    "Microsoft.Framework.DependencyInjection": "1.0.0-beta8",
+    "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta8"
   },
 
   "commands": {

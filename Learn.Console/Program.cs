@@ -16,7 +16,9 @@ namespace Learn.ConsolePlat
     {
         static void Main(string[] args)
         {
-            AttributeDemo();
+            //AttributeDemo();
+
+            new NSynchronizationContext().TestMethod();
 
             Console.ReadLine();
         }
