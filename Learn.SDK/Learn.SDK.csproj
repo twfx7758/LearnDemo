@@ -59,6 +59,12 @@
     <Compile Include="Algorithm\BaseAlgorithm.cs" />
     <Compile Include="Algorithm\HashTest.cs" />
     <Compile Include="Attribute\OSVERSIONINFO.cs" />
+    <Compile Include="MPump\BlockingQueue.cs" />
+    <Compile Include="MPump\IQueueReader.cs" />
+    <Compile Include="MPump\IQueueWriter.cs" />
+    <Compile Include="MPump\SendOrPostCallBackItem.cs" />
+    <Compile Include="MPump\StaSynchronizationContext.cs" />
+    <Compile Include="MPump\StaThread.cs" />
     <Compile Include="NSynchronizationContext.cs" />
     <Compile Include="Redis\RedisClient.cs" />
     <Compile Include="Redis\RedisConfigInfo.cs" />
