@@ -35,7 +35,7 @@ namespace Learn.SDK.MPump
         {
             while (true)
             {
-                bool stop = mStopEvent.WaitOne();
+                bool stop = mStopEvent.WaitOne(0);
                 if (stop)
                 {
                     break;
