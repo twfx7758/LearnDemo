@@ -22,7 +22,7 @@ namespace Learn.SDK.MPump
 
         public override void Send(SendOrPostCallback d, object state)
         {
-            SendOrPostCallBackItem item = new MPump.SendOrPostCallBackItem(d, state, ExecutionType.Send);
+            SendOrPostCallBackItem item = new SendOrPostCallBackItem(d, state, ExecutionType.Send);
             mQueue.Enqueue(item);
             item.ExecutionCompleteWaitHandle.WaitOne();
             if (item.ExecutedWithException)
@@ -31,7 +31,7 @@ namespace Learn.SDK.MPump
 
         public override void Post(SendOrPostCallback d, object state)
         {
-            SendOrPostCallBackItem item = new MPump.SendOrPostCallBackItem(d, state, ExecutionType.Post);
+            SendOrPostCallBackItem item = new SendOrPostCallBackItem(d, state, ExecutionType.Post);
             mQueue.Enqueue(item);
         }
 
