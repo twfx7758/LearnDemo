@@ -28,15 +28,17 @@ namespace Learn.ConsolePlat
         static void Main(string[] args)
         {
             //AttributeDemo();
-            mStaSyncContext = new StaSynchronizationContext();
-            for (int i = 0; i < 100; i++)
-            {
-                ThreadPool.QueueUserWorkItem(NonStaThread);
-            }
-            Console.WriteLine("Processing");
-            Console.WriteLine("Press any key to dispose SyncContext");
+            //mStaSyncContext = new StaSynchronizationContext();
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    ThreadPool.QueueUserWorkItem(NonStaThread);
+            //}
+            //Console.WriteLine("Processing");
+            //Console.WriteLine("Press any key to dispose SyncContext");
+            //Console.ReadLine();
+            //mStaSyncContext.Dispose();
+            StackInfoShow();
             Console.ReadLine();
-            mStaSyncContext.Dispose();
 
         }
 
@@ -116,6 +118,19 @@ namespace Learn.ConsolePlat
             foreach (var item in x)
             {
                 Console.WriteLine(item);
+            }
+        }
+
+        /// <summary>
+        /// 输出方法调用的栈信息
+        /// </summary>
+        static void StackInfoShow()
+        {
+            var list = new System.Diagnostics.StackTrace().GetFrames();
+            foreach (System.Diagnostics.StackFrame e in list)
+            {
+                var strE = string.Format("类名{0},方法:{1}", e.GetMethod().DeclaringType.Name, e.GetMethod().Name);
+                Console.WriteLine(strE);
             }
         }
     }
