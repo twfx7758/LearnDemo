@@ -250,6 +250,7 @@
     <Content Include="JavaCode\WeightedQuickUnionUF.java" />
     <Content Include="JavaCode\WhiteFilter.java" />
     <Content Include="JavaCode\Whitelist.java" />
+    <Content Include="数据库\将数据导成Insert语句.sql" />
     <Content Include="数据库\数据性能.sql" />
     <Content Include="数据库\权限-职级设计\职级表.sql" />
     <Content Include="数据库\权限-职级设计\获取职级成员.sql" />
